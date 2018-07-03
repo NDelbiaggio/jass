@@ -1,9 +1,17 @@
 const express = require('express');
-const app = express();
+var app = express();
+var server = require('http').Server(app);
+var path = require('path');
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+require('./communication/communication')(server)
 
 const port = process.env.PORT || 3000;
-const server = app.listen(port, ()=>{
+server.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
 
-module.exports = server;
+
+
+

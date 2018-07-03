@@ -1,0 +1,68 @@
+body{
+
+    background-color: green;
+}
+
+.playground{
+    /* width: 100%;
+    height: 600px; */
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cards{
+    display: none;
+    width: 100%; 
+    justify-content: center;
+}
+
+.card{
+    display: inline-block;
+    width: 10%;
+    padding: 1em;
+    box-sizing: border-box;    
+}
+
+.card > img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 3px 2px 0 black;
+    border-radius: 10px;    
+    z-index: 1;
+}
+
+.card > img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    z-index: 2;
+}
+
+.card-pile{
+    padding: .3em;
+}
+
+.card-pile > img{
+    display: block;    
+    width: 100px;
+    box-shadow: 3px 2px 0 black;
+    border-radius: 10px;    
+}
+
+
+.middle{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pile{
+    width: 60%;
+    height: 300px;
+    background-color: red;
+}
+
+.sidePlayers{
+    width: 20%;
+    height: 300px;
+    background-color: gray;
+}

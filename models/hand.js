@@ -51,7 +51,6 @@ handSchema.methods.addCardPlayed = function(card, atout, plie){
                     return true;
                 }
             }
-
         }else{
             let result = this.cards.find(c =>{
                 return c.type == firstCardPlayed.type;
@@ -67,8 +66,6 @@ handSchema.methods.addCardPlayed = function(card, atout, plie){
         return true;
     }
 }
-
-
 
 handSchema.methods.addCardToHand = function(card){
     this.cards.push(card);

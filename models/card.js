@@ -7,7 +7,8 @@ const cardSchema = new mongoose.Schema({
     atoutPower: Number,
     sortIndex: Number,
     atoutValue: Number,
-    value: Number
+    value: Number,
+    imgSrc: String
 });
 
 const Card = mongoose.model('Card', cardSchema);
