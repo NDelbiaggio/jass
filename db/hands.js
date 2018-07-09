@@ -6,9 +6,11 @@ let lstCards;
 const nbPlayers = 4;
 const nbCardsInHand = 9;
 
+let hands;
+
 exports.getHands = function getHands(){
     lstCards = getCopyCards();
-    let hands = [];
+    hands = [];
     for (let i = 0; i < nbPlayers; i++) {
         let hand = new Hand({
             cards: getHand()
@@ -16,7 +18,9 @@ exports.getHands = function getHands(){
         hands.push(hand)        
     }
     return hands;
-}
+};
+
+exports.getCurrentHands = ()=>hands ;
 
 function getHand(){
     let result = [];

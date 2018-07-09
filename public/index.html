@@ -1,62 +1,83 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>View Jass - socket.io</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="playground">
-      <h5 class="playersCounter">
-        There is no players
-      </h5>
-      <h1>player username: <span class="lstPlayer"></span> </h1>
-      <h1>player name <span class="playerNum"></span> </h1>
-      
 
-      <div class="middle">
-        <div class="sidePlayers"></div>      
-        <div class="pile">
-            <div class="card-pile">
+<head>
+    <meta charset="UTF-8">
+    <title>View Jass - socket.io</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="playground">
+        <h1>username:
+            <span class="playerUsername"></span>
+        </h1>
+        <h1>players
+            <h4 value='0' class="player player-1"></h4>
+            <h4 value='1' class="player player-2"></h4>
+            <h4 value='2' class="player player-3"></h4>
+            <h4 value='3' class="player player-4"></h4>
+        </h1>
+
+        <h1 class="message"> messages</h1>
+        <button class="sendAtout">Send atout</button>
+
+
+        <div class="middle">
+            <div class="sidePlayers"></div>
+            <div class="pile">
+                <div class="card-pile " id="card-pile-1">
+                    <img>
+                </div>
+                <div class="card-pile" id="card-pile-2">
+                    <img>
+                </div>
+                <div class="card-pile" id="card-pile-3">
+                    <img>
+                </div>
+                <div class="card-pile" id="card-pile-4">
+                    <img>
+                </div>
+            </div>
+            <div class="sidePlayers"></div>
+        </div>
+
+        <div class="cards">
+            <div class="card" value="0">
+                <img>
+            </div>
+            <div class="card" value="1">
+                <img>
+            </div>
+            <div class="card" value="2">
+                <img>
+            </div>
+            <div class="card" value="3">
+                <img>
+            </div>
+            <div class="card" value="4">
+                <img>
+            </div>
+            <div class="card" value="5">
+                <img>
+            </div>
+            <div class="card" value="6">
+                <img>
+            </div>
+            <div class="card" value="7">
+                <img>
+            </div>
+            <div class="card" value="8">
                 <img>
             </div>
         </div>
-        <div class="sidePlayers"></div>
-      </div>
-      
-      <div class="cards">
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-        <div class="card">
-            <img>
-        </div>
-      </div>
     </div>
 
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <script src="/jquery-1.8.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+
 </body>
+
 </html>

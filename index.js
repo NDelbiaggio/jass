@@ -5,9 +5,9 @@ var path = require('path');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-require('./communication/communication')(server)
+require('./communication/communication')(server);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3400;
 server.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

@@ -5,8 +5,14 @@ const nbPlies = 9;
 const bonusLast = 5;
 
 const plieSchema = new mongoose.Schema({
-    number: Number,
-    cards: [cardSchema],
+    number: {
+        type: Number,
+        default: 0
+    },
+    cards: {
+        type: [cardSchema],
+        default: []
+    },
     highestCardIndex: {
         type: Number,
         default: 0
@@ -25,6 +31,7 @@ plieSchema.methods.calculatePliePoints = function(atout){
 plieSchema.methods.addCardPlayed = function(atout, card){
     this.cards.push(card);
     //update highestCardIndex
+    return this.cards.length;
 }
 
 const Plie = mongoose.model('Plie', plieSchema);

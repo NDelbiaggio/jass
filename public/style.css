@@ -29,6 +29,7 @@ body{
     box-shadow: 3px 2px 0 black;
     border-radius: 10px;    
     z-index: 1;
+    opacity: 0.5;
 }
 
 .card > img:hover{
@@ -40,10 +41,10 @@ body{
 
 .card-pile{
     padding: .3em;
+    display: inline-block;
 }
 
-.card-pile > img{
-    display: block;    
+.card-pile > img{  
     width: 100px;
     box-shadow: 3px 2px 0 black;
     border-radius: 10px;    
@@ -66,3 +67,9 @@ body{
     height: 300px;
     background-color: gray;
 }
+
+
+.player-1{color: red}
+.player-2{color: blue}
+.player-3{color: purple}
+.player-4{color: yellow}
