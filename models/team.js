@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const teamSchema = new mongoose.Schema({
-    players: [],
+    players: {
+        type: [],
+        default: []
+    },
     points: {
      type: Number,
      default: 0
@@ -13,4 +16,7 @@ teamSchema.methods.addPlayer = function(player){
     this.players.push(player);
 }
 
+const Team = mongoose.model('Team', teamSchema);
+
 exports.teamSchema = teamSchema;
+exports.Team = Team;

@@ -23,15 +23,17 @@ $(function () {
     /* A player joined - display it in the list */
     socket.on('player joined', (res)=>{
         players = res.players;
-        $players.text($players.text() + res.playerName);
         for (let i = 0; i < players.length; i++) {
-            $(`.player-${i+1}`).text(` ${i+1}) ${players[i].playerName}`);
+           $(`.player-${i+1}`).text(`${i+1}) ${players[i].playerName}`);
         }
     });
 
     /* Receive cards and display them */
     socket.on('game start', (res)=>{
         hand = res.hand;
+        hand.cards.sort((a, b)=>{
+            return a.sortIndex > b.sortIndex
+        });
         $('.cards').css({"display": "flex"})
         $('.card  > img').each(function(index){
             const card = hand.cards[index];

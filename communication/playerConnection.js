@@ -1,26 +1,32 @@
 const {getHands} = require('../db/hands');
 const _ = require('lodash');
-let players = [];
+
+let players;
 let hands;
 let io;
 
-
+let team = 0;
 
 
 module.exports = function(ioParam, socket, game){
     io = ioParam;
     var addedUser = false;
+    players = game.players;
 
     socket.on('add player', (playerName2) => {
         let playerName = `${socket.id}`; //tempo
-        if(players.length > 4) throw new Error('This game is full');
+        if(players.length > 4) return console.log('GAME FULL');
         if (addedUser) return;    
-        players.push({id: socket.id, playerName: playerName});        
+        
+        game.addNewPlayer({
+            playerName,
+            id: socket.id,            
+        },team);
+        team = team == 0? 1: 0;
+          
         addedUser = true;    
-
         playerJoined(playerName);  
         socket.emit('login',{playerName: `user ${players.length}`});
-        
 
         require('../communication/rules/play')(io, socket, players);
 

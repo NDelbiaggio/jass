@@ -1,11 +1,25 @@
 const mongoose = require('mongoose');
-const {teamSchema} = require('./team');
+const {teamSchema, Team} = require('./team');
 
 const gameSchema = new mongoose.Schema({
-    players: Object,
-    teamA: teamSchema,
-    teamB: teamSchema
+    players: {
+        type: [],
+        default: []
+    },
+    teamA: {
+        type: teamSchema,
+        default: new Team()
+    },
+    teamB: {
+        type: teamSchema,
+        default: new Team()
+    }
 });
+
+gameSchema.methods.addNewPlayer = function (player, team){
+    this.players.push(player);
+    (team==0)? this.teamA.addPlayer(player): this.teamB.addPlayer(player);
+};
 
 const Game = mongoose.model('Game', gameSchema);
 

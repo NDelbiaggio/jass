@@ -73,3 +73,19 @@ body{
 .player-2{color: blue}
 .player-3{color: purple}
 .player-4{color: yellow}
+
+.desktop{
+    display: flex;
+}
+
+.scores{
+    border: black 2px solid;
+}
+
+/* .players{
+    display: block;
+}
+.player{
+    display: inline;
+} */
+

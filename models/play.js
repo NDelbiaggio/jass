@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
-const Plie = require('./plie');
+const {plieSchema} = require('./plie');
 
 const nbPlies = 9;
 const allCardsBonus = 100;
 
 const playSchema = new mongoose.Schema({
-    plies: [Plie],
+    plies: {
+        type: [plieSchema],
+        default: []
+    },
     atout: String,    
 });
 
@@ -14,7 +17,12 @@ playSchema.methods.calculatePlayPoints = function(){
     this.plies.forEach(plie => {
         points += plie.calculatePliePoints(this.atout);
     });
+    
     return (this.plies.length == nbPlies)? points + allCardsBonus: points;
+};
+
+playSchema.methods.addPlie = function(plie){
+    plies.push(plie);
 };
 
 const Play = mongoose.model('Play', playSchema);

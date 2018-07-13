@@ -1,27 +1,29 @@
 const { Plie } = require('../../models/plie');
 const {isCardPlayable} = require('./cardPlayable');
 const {getCurrentHands} = require('../../db/hands');
+const {Play} = require('../../models/play');
+
+const {atoutListener} = require('./atoutListener');
+
 
 let plie = new Plie();
 let atout; 
 let hands;
 let io;
 const cardsPerPlie = 4;
+let nextPlayer = -1;
 
-let nextPlayer;
+let play;
 
 module.exports = function (ioParam, socket, players) {
     io = ioParam;
 
-    socket.on('atout', (payload)=>{
-        hands = getCurrentHands();
-        atout = payload.atout;
-        io.emit('atout chosen', {
-            atout
-        });
-        nextPlayer = players.length;
+    atoutListener(io, socket, (paramPlay, paramHands)=>{
+        play = paramPlay;
+        hands = paramHands;
         notifyPlayerToPlay();
     });
+
 
     socket.on('play', (card) => {
         //Check if the correct player played
@@ -39,7 +41,7 @@ module.exports = function (ioParam, socket, players) {
 
         if(isValid){
             //1) add the card to the plie
-            const plieLength = plie.addCardPlayed(atout, card);
+            const plieLength = plie.addCardPlayed(atout, card, socket.id);
             //2) notify the others players about the card
             io.emit('card played', {card});
             //3) check if 4 cards have been played
@@ -51,8 +53,9 @@ module.exports = function (ioParam, socket, players) {
                     //finish the play
                     // count points
                 }else{
+                    play.addPlie(plie);
                     plie = new Plie({
-                        number: plie.number
+                        number: plie.number + 1
                     });
                 }
             }
@@ -63,10 +66,9 @@ module.exports = function (ioParam, socket, players) {
         }
         
     });
-
     
     function notifyPlayerToPlay(){
-        nextPlayer = (nextPlayer + 1) >= players.length? 0: nextPlayer + 1;
+        nextPlayer = (nextPlayer + 1) >= players.length || nextPlayer == -1? 0: nextPlayer + 1;
         io.to(players[nextPlayer].id).emit('your turn');
     }
 
