@@ -4,7 +4,7 @@ const {Plie} = require('../../../../models/plie');
 const {Team} = require('../../../../models/team');
 const {Player} = require('../../../../models/player');
 
-describe("calculatePoointsTeam", ()=>{
+describe("calculatePointsTeam", ()=>{
 
     it('should return 257 points for one team and 0 for the other one when a team gets all the plies', ()=>{
         let play = new Play({
