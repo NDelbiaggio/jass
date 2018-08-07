@@ -17,7 +17,8 @@ const plieSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    leadingPlayer: String 
+    leadingPlayer: String,
+    lastPlayer: String
 });
 
 plieSchema.methods.calculatePliePoints = function(atout){
@@ -30,7 +31,11 @@ plieSchema.methods.calculatePliePoints = function(atout){
 
 plieSchema.methods.addCardPlayed = function(atout, card, playerId){
     this.cards.push(card);
-    const isHigher = isCardHigher(atout, card, this.cards[this.highestCardIndex]);
+    this.lastPlayer = playerId;
+    let isHigher = isCardHigher(atout, card, this.cards[this.highestCardIndex]);
+    if(this.cards.length == 1){
+        isHigher = true;
+    }
     if(isHigher){
         this.highestCardIndex = this.cards.length - 1;
         this.leadingPlayer = playerId;
@@ -42,6 +47,7 @@ function isCardHigher(atout, card, leadingCard){
     if(card.type == atout && leadingCard.type != atout) return true;
     if(card.type != atout && leadingCard.type == atout) return false;
     if(card.type != atout && leadingCard.type != atout){
+        if(card.type != leadingCard.type) return false;
         return card.power > leadingCard.power
     }else{
         return card.atoutPower > leadingCard.atoutPower

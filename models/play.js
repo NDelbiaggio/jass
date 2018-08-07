@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {plieSchema} = require('./plie');
+const {plieSchema, Plie} = require('./plie');
 
 const nbPlies = 9;
 const allCardsBonus = 100;
@@ -10,21 +10,78 @@ const playSchema = new mongoose.Schema({
         default: []
     },
     atout: String,    
+    atoutChosenBy: String
 });
 
-playSchema.methods.calculatePlayPoints = function(){
+/**
+ * Returns the points of the play
+ * @returns {number} points
+ */
+playSchema.methods.calculatePlayPoints = function(plies=this.plies){
     let points = 0;
-    this.plies.forEach(plie => {
+    plies.forEach(plie => {
         points += plie.calculatePliePoints(this.atout);
     });
     
-    return (this.plies.length == nbPlies)? points + allCardsBonus: points;
+    return (plies.length == nbPlies)? points + allCardsBonus: points;
 };
 
+
+playSchema.methods.calculatePointsTeam = function(team){
+    let plieTeam = [];
+    this.plies.forEach(plie =>{
+       let indPlayer = team.players.findIndex(p => p.id == plie.leadingPlayer); 
+        if(indPlayer != -1){
+            plieTeam.push(plie);
+        } 
+    });
+
+    return this.calculatePlayPoints(plieTeam);
+}
+
+/**
+ * Add a plie to the plies
+ * @param {Object} plie 
+ */
 playSchema.methods.addPlie = function(plie){
     plies.push(plie);
 };
 
+/**
+ * Create a new plie with the number following the previous ones
+ * @returns {Object} plie
+ */
+playSchema.methods.createNewPlie = function(){
+    if(this.plies.length == 9) return;
+    const plieNumber = this.plies.length == 0? 1: this.plies[this.plies.length-1].number + 1;
+    let plie = new Plie({number: plieNumber});
+    this.plies.push(plie);
+    return plie;
+}
+
+/**
+ * Returns the last plie
+ * @returns {Object} plie
+ */
+playSchema.methods.getCurrentPlie = function(){
+    if(this.plies.length == 0) return this.createNewPlie();
+    return this.plies[this.plies.length-1];
+}
+
+/**
+ * Returns the previous plie, if there is only one plie the first one is returned
+ * @returns {Object} plie
+ */
+playSchema.methods.getPreviousPlie = function(){
+    const prevPlieInd = this.plies.length <= 1? 0: this.plies.length -2;
+    return this.plies[prevPlieInd];
+}
+
+playSchema.methods.clearPlies = function(){
+    this.plies = [];
+}
+
 const Play = mongoose.model('Play', playSchema);
 
 exports.Play = Play;
+exports.playSchema = playSchema;

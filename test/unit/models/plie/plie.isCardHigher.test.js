@@ -52,4 +52,15 @@ describe('plie.isCardHigher', ()=>{
         plie.addCardPlayed(atout, card);
         expect(plie.highestCardIndex).toBe(0);
     });
+
+    it('should define the highest card based on the type of the first card and the highest power when no atout is played', ()=>{
+        const plie = new Plie();
+        plie.addCardPlayed(atout,getCopyCard(types.clubs, 9))
+        plie.addCardPlayed(atout,getCopyCard(types.spades, 8))
+        plie.addCardPlayed(atout,getCopyCard(types.clubs, 11))
+        plie.addCardPlayed(atout,getCopyCard(types.spades, 12))
+        
+        expect(plie.highestCardIndex).toBe(2)
+       
+    })
 });
