@@ -36,7 +36,7 @@ playSchema.methods.calculatePlayPoints = function(plies=this.plies){
 playSchema.methods.calculatePointsTeam = function(team){
     let plieTeam = [];
     this.plies.forEach(plie =>{
-       let indPlayer = team.players.findIndex(p => p.id == plie.leadingPlayer); 
+       let indPlayer = team.players.findIndex(p => p._id == plie.leadingPlayer); 
         if(indPlayer != -1){
             plieTeam.push(plie);
         } 
@@ -86,6 +86,7 @@ playSchema.methods.getPreviousPlie = function(){
 playSchema.methods.clearPlies = function(){
     this.plies = [];
     this.chibre = "";
+    this.atout;
 }
 
 const Play = mongoose.model('Play', playSchema);

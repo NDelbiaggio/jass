@@ -19,7 +19,7 @@ function getPlayerIndToChooseAtout(players, play){
         return players.findIndex(p=> p.cards.find(c => c._id == d7._id));
     } else {
         //Determine the next player to choose atout
-        let indPlayer = players.findIndex(p => p.id == play.atoutChosenBy);
+        let indPlayer = players.findIndex(p => p._id == play.atoutChosenBy);
         let indNxtPlayer = (indPlayer == players.length - 1) ? 0: indPlayer + 1;
         return indNxtPlayer;
     }
@@ -30,8 +30,6 @@ function getChibrePlayer(players, play){
     const chibrePlayerInd = indPlayer + 2 >= players.length? indPlayer - 2 : indPlayer + 2;
     return players[chibrePlayerInd];
 }
-
-
 
 exports.notifyToChooseAtout = notifyToChooseAtout;
 exports.getPlayerToChooseAtout = getPlayerToChooseAtout;

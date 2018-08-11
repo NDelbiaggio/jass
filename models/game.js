@@ -19,13 +19,20 @@ const gameSchema = new mongoose.Schema({
     play: {
         type: playSchema,
         default: new Play()
+    },
+    status: {
+        type: Number,
+        default: 0
     }
 
 });
 
-gameSchema.methods.addNewPlayer = function (player, team){
+let teamA = true;
+
+gameSchema.methods.addNewPlayer = function (player){
     this.players.push(player);
-    (team==0)? this.teamA.addPlayer(player): this.teamB.addPlayer(player);
+    (teamA)? this.teamA.addPlayer(player): this.teamB.addPlayer(player);
+    teamA = !teamA; 
 };
 
 const Game = mongoose.model('Game', gameSchema);

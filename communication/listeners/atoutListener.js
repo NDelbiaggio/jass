@@ -12,15 +12,12 @@ module.exports = function (io, socket, players, play) {
         let expectedPlayer = player;
 
         if(play.chibre){
-            console.log("PLAY chibre TRUE")
             expectedPlayer = getChibrePlayer(players, play);
         }
-        console.log("Player id: "+player.id)
-        console.log("expectedPl: " + expectedPlayer.id);
-        console.log("socket: " + socket.id)
-        if(expectedPlayer.id == socket.id) {
+        const playerMatchId = players.find(p=>p.id == socket.id);
+        if(expectedPlayer._id == playerMatchId._id) {
             play.atout = payload.atout; 
-            play.atoutChosenBy = player.id
+            play.atoutChosenBy = player._id
             notifyAtoutChosen(io, play.atout);
             notifyPlayerToPlay(io, play.atoutChosenBy);                    
         }else{

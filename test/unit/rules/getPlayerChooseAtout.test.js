@@ -74,7 +74,7 @@ describe('getPlayerToChooseAtout', ()=>{
     });
 
     it("Should return the player index 3 if the player index 2 did atout previously", ()=>{
-        let play = new Play({atoutChosenBy: players[2].id});
+        let play = new Play({atoutChosenBy: players[2]._id});
 
         const result = getPlayerToChooseAtout(players, play);
 
@@ -82,7 +82,7 @@ describe('getPlayerToChooseAtout', ()=>{
     });
 
     it("Should return the player index 0 if the player index 3 did atout previously", ()=>{
-        let play = new Play({atoutChosenBy: players[3].id});
+        let play = new Play({atoutChosenBy: players[3]._id});
 
         const result = getPlayerToChooseAtout(players, play);
 

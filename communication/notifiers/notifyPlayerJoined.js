@@ -9,10 +9,10 @@ const eventName = "player joined";
  * @param {*} player 
  * @param {*} players 
  */
-function notifyPlayerJoined(io, player, players){
+function notifyPlayerJoined(io, playerName, players){
     io.emit(eventName, {
         nbPlayers: players.length,
-        playerName: player.name,
+        playerName: playerName,
         players: _.map(players, _.partialRight(_.pick, ['name']))
     });    
 }

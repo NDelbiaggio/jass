@@ -15,11 +15,13 @@ const eventName = "play";
 module.exports = function(io, socket, players, play, teamA, teamB){
     
     var playLst = socket.on(eventName, (card) => {
-        let plie = play.getCurrentPlie();          
+        let plie = play.getCurrentPlie();   
+        
         let currentPlayer = findCurrentPlayer(plie, play, players);     
+        let requestPlayer = players.find(player=> player.id == socket.id);
 
         //Check if the correct player played
-        if(socket.id != currentPlayer.id) {
+        if(requestPlayer._id != currentPlayer._id) {
             return console.log(`IT IS NOT YOUR TURN, IT IS ${currentPlayer.id} turn`);            
         };
 
@@ -28,7 +30,7 @@ module.exports = function(io, socket, players, play, teamA, teamB){
         if(isAllowedToBePlayed){
             //1) add the card to the plie
             currentPlayer.playCard(card._id);
-            const plieLength = play.getCurrentPlie().addCardPlayed(play.atout, card, socket.id);
+            const plieLength = play.getCurrentPlie().addCardPlayed(play.atout, card, currentPlayer._id);
             
             //2) notify the others players about the card
             io.emit('card played', {card});
@@ -38,17 +40,18 @@ module.exports = function(io, socket, players, play, teamA, teamB){
                 if(plie.number == 9){
                     calculateAndNotifyPoints(play, teamA, teamB);
 
-                    printPlay(play, players, ()=>{
-                        console.log("The play has been saved.");
-                        play.clearPlies();
-                        distributeCards(io, players, ()=>{
-                            notifyToChooseAtout(io, players, play);
-                        });
-                    })
+                    // printPlay(play, players, ()=>{
+                    //     console.log("The play has been saved.");
+                    // })
 
+                    play.clearPlies();
+                    distributeCards(io, players, ()=>{
+                        notifyToChooseAtout(io, players, play);
+                    });
+                    
                 }else{
                     play.createNewPlie();
-                    let leader = players.find(p=> p.id == plie.leadingPlayer);                 
+                    let leader = players.find(p=> p._id == plie.leadingPlayer);                 
                     notifyPlayerToPlay(io, leader.id);
                 }
             }else{
@@ -61,6 +64,7 @@ module.exports = function(io, socket, players, play, teamA, teamB){
     });
 
     function calculateAndNotifyPoints(play, teamA, teamB){
+        console.log("SENDING POINTS")
         const pointsA = play.calculatePointsTeam(teamA);
         const pointsB = play.calculatePointsTeam(teamB);
 

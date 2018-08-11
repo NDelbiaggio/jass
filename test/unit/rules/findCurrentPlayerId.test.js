@@ -19,7 +19,7 @@ describe('findCurrentPlayerId', ()=>{
         
         let plie = new Plie();
         let play = new Play({
-            atoutChosenBy: playerAtout.id
+            atoutChosenBy: playerAtout._id
         });
         
         let result = findCurrentPlayer(plie, play, players);
@@ -33,9 +33,9 @@ describe('findCurrentPlayerId', ()=>{
         
         let play = new Play({
             plies : [
-                new Plie({number : 1, leadingPlayer: leadingPlayer.id})
+                new Plie({number : 1, leadingPlayer: leadingPlayer._id})
             ],
-            atoutChosenBy: playerAtout.id
+            atoutChosenBy: playerAtout._id
         });
                 
         let plie = play.createNewPlie();
@@ -51,14 +51,14 @@ describe('findCurrentPlayerId', ()=>{
 
         let play = new Play({
             plies : [
-                new Plie({number : 1, leadingPlayer: leadingPlayer.id})
+                new Plie({number : 1, leadingPlayer: leadingPlayer._id})
             ],
-            atoutChosenBy: playerAtout.id
+            atoutChosenBy: playerAtout._id
         });
                 
         let plie = play.createNewPlie();
         let card = getCopyCard(types.diamonds, 8);
-        plie.addCardPlayed(types.diamonds, card, lastPlayer.id);
+        plie.addCardPlayed(types.diamonds, card, lastPlayer._id);
 
         let result = findCurrentPlayer(plie, play, players);
 

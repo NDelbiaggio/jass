@@ -6,47 +6,53 @@ const distributeCards = require('../rules/cardsDistribution');
 const {Player} = require('../../models/player');
 
 const eventName = 'add player';
-let team = 0;
 
 module.exports.addPlayerListener = function(io, socket, game){
     var addedUser = false;
     let players = game.players;
 
-    socket.on(eventName, (playerName2) => {
-        let playerName = `${socket.id}`; //tempo
-        if(players.length > 4) return console.log('GAME FULL');
-        if (addedUser) return; // avoid a player to be connected twice        
+    socket.once(eventName, (name) => {
+        if(players.length < 4){
+            let player = new Player({id: socket.id, name});
+            game.addNewPlayer(player);
+            if(players.length == 4){
+                distributeCards(io, players, ()=>{
+                    notifyToChooseAtout(io, game.players, game.play);
+                }); 
+            }
+        }else{
+            const placeAvailable = players.find(player => player.id == "");
+            if(!placeAvailable){
+                socket.emit("game full", {});
+                return console.log('GAME FULL');
+            }else{
+                placeAvailable.id = socket.id;
+                placeAvailable.name = name;
+                socket.emit('cards distribution', {cards: placeAvailable.cards});
+                if(!game.play.atout){
+                    notifyToChooseAtout(io, game.players, game.play);
+                }
+                //send him information
+            }
+        }
+
         addedUser = true; 
         socket.addedUser = true;
-
-        let player = new Player({ name: playerName, id: socket.id,})
-        game.addNewPlayer(player, team);
-        team = team == 0? 1: 0;
-        notifyPlayerJoined(io, player, players);  
-        
+        notifyPlayerJoined(io, name, players);          
         socket.emit('login',{playerName: `user ${players.length}`});
         
-        registerListeners(io, socket, game);
-
-        if(players.length == 4){
-            distributeCards(io, players, ()=>{
-                notifyToChooseAtout(io, game.players, game.play);
-            }); 
-        }            
+        registerListeners(io, socket, game);           
     });
 }
 
-module.exports.disconnectPlayer = function disconnectPlayer(playerId, game){
-    const indPlayer = game.players.findIndex((p)=> p.id == playerId);
-    if(indPlayer == -1) return;
-    players.splice(indPlayer, 1);
-    console.log("IN")
-    //notifyPlayerJoined();
-}
+module.exports.disconnectPlayer = function disconnectPlayer(playerId, game){   
+    console.log("disconnecting: socket.id: ", playerId);
+    const player = game.players.find((p)=> p.id == playerId);
+    player.id = "";
+    player.name = "";
 
-
-
-
+    game.status = 0;
     
+    //notifyPlayerJoined();
 
-
+}

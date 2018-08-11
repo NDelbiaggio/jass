@@ -1,7 +1,7 @@
 $(function () {
     var $playerUsername = $('.playerUsername');
-    //var socket = io.connect('http://localhost:3400');
-    var socket = io.connect('https://play-jass.herokuapp.com/');
+    var socket = io.connect('http://localhost:3400');
+    //var socket = io.connect('https://play-jass.herokuapp.com/');
         
     var players = [];
     var handCards; 
@@ -28,8 +28,6 @@ $(function () {
 
     /* Receive cards and display them */
     socket.on('cards distribution', (res)=>{
-        console.log("Cards distribution");
-        console.log(res.cards);
         handCards = res.cards;
         handCards.sort((a, b)=>{
             return a.sortIndex > b.sortIndex
@@ -62,24 +60,60 @@ $(function () {
     });
 
     /*Play a card - send it to others */
-    $('.card').dblclick(function(){
-        let card = handCards[$(this).attr('value')]; 
+    // $('.card').dblclick(function(){
+    //     let card = handCards[$(this).attr('value')]; 
+    //     var isPlayable = isCardPlayable(card, atout, plie, handCards);
+    //     if(isPlayable){
+    //         socket.emit('play', card);
+    //         $(this).css("display", "none");
+    
+    //         $('.card  > img').each(function(index){
+    //             $(this).css("opacity", "0.5");
+    //         });            
+    //         card.available = false;
+    //         console.log("The following card has been played.")
+    //         console.log(card);
+    //     }else{
+    //         console.log("NOT ALLOWED TO PLAY THIS CARD");
+    //     }
+    // });
+
+    doubleClick(".card",function(self){
+        let card = handCards[self.attr('value')]; 
         var isPlayable = isCardPlayable(card, atout, plie, handCards);
         if(isPlayable){
             socket.emit('play', card);
-            $(this).css("display", "none");
+            self.css("display", "none");
     
             $('.card  > img').each(function(index){
-                $(this).css("opacity", "0.5");
+                self.css("opacity", "0.5");
             });            
             card.available = false;
-            console.log("The following card has been played.")
-            console.log(card);
         }else{
             console.log("NOT ALLOWED TO PLAY THIS CARD");
         }
-
     });
+
+    //
+    function doubleClick(target, func){
+        var touchtime = 0;
+        $(target).on("click", function() {
+            if (touchtime == 0) {
+                // set first click
+                touchtime = new Date().getTime();
+            } else {
+                // compare first click to this click and see if they occurred within double click threshold
+                if (((new Date().getTime()) - touchtime) < 800) {
+                    // double click occurred
+                    func($(this))
+                    touchtime = 0;
+                } else {
+                    // not a double click so set as a new first click
+                    touchtime = new Date().getTime();
+                }
+            }
+        });
+    }
 
     /*Is notified to choose the atout and emit the atout to others */
     socket.on('choose atout', ()=>{
@@ -88,8 +122,13 @@ $(function () {
     });
 
     //ATOUT has been chosen and is sent
-    $('.atoutSelector > img').dblclick(function(){
-        let atout = $(this).attr("value");
+    // $('.atoutSelector > img').dblclick(function(){
+    //     let atout = $(this).attr("value");
+    //     socket.emit('atout', {atout});
+    //     $('.atoutSelector').css("display", "none");
+    // });    
+    doubleClick(".atoutSelector > img",function(self){
+        let atout = self.attr("value");
         socket.emit('atout', {atout});
         $('.atoutSelector').css("display", "none");
     });    
@@ -107,6 +146,8 @@ $(function () {
             var isPlayable = isCardPlayable(card, atout, plie, handCards);
             if(isPlayable){
                 $(this).css("opacity", "1");
+            }else {
+                $(this).css("opacity", "0.5");
             }
         });
         //playAutomatically();
@@ -134,6 +175,7 @@ $(function () {
         setTimeout(() => {
             $(".playPoints").html("");
         }, 5000);
+        console.log(payload);
     });
 
     $(".sendAtout").click(()=>{
@@ -143,6 +185,10 @@ $(function () {
         $('.atoutSelector').css("display", "none");
         socket.emit('chibre', {});
     })
+
+    socket.on("game full", ()=>{
+        $('.game_full').css("display", "block");
+    });
  
     var highestCardIndex = 0;
     function setHighestCardIndex(atout, card, cards, ){
