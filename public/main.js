@@ -1,6 +1,7 @@
 $(function () {
     var $playerUsername = $('.playerUsername');
-    var socket = io.connect('http://localhost:3400');
+    //var socket = io.connect('http://localhost:3400');
+    var socket = io.connect('https://play-jass.herokuapp.com/');
         
     var players = [];
     var handCards; 
