@@ -109,7 +109,7 @@ $(function () {
                 $(this).css("opacity", "1");
             }
         });
-        playAutomatically();
+        //playAutomatically();
     });
 
     function playAutomatically(){
