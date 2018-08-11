@@ -4,7 +4,11 @@
   "description": "Playing jass",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose --coverage"
+    "test": "jest --watchAll --verbose --coverage",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.11.2"
   },
   "keywords": [
     "jass"
@@ -12,7 +16,9 @@
   "author": "Nicolas Delbiaggio",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.3",
     "express": "^4.16.3",
+    "helmet": "^3.13.0",
     "joi": "^13.4.0",
     "lodash": "^4.17.10",
     "mongoose": "^5.1.7",

@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const filePrint = "test.txt";
 
-function printResults(play, players, callback){
+function printPlay(play, players, callback){
     fs.appendFile(filePrint, `let play = new Play({
         plies: [
             ${printPlies(play.plies)}
@@ -62,4 +62,23 @@ function printPlayers(players){
     return result;
 }
 
-module.exports = printResults;
+function printPlayersWithHands(players){
+    let result = ``;
+    players.forEach(player =>{
+        result += `new Player({
+            id: "${player.id}",
+            cards: [
+                ${printCards(player.cards)}
+            ]
+        }),`
+    });
+    return result;
+}
+
+function writePlayersWithHands(players, callback){
+    let print = printPlayersWithHands(players);
+    fs.appendFile(filePrint, print, 'utf8', callback);
+}
+
+exports.printPlay = printPlay;
+exports.writePlayersWithHands = writePlayersWithHands;

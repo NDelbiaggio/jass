@@ -10,11 +10,13 @@ const playSchema = new mongoose.Schema({
         default: []
     },
     atout: String,    
-    atoutChosenBy: String
+    atoutChosenBy: String,
+    chibre: String
 });
 
 /**
  * Returns the points of the play
+ * @param {[Object]} plies
  * @returns {number} points
  */
 playSchema.methods.calculatePlayPoints = function(plies=this.plies){
@@ -26,7 +28,11 @@ playSchema.methods.calculatePlayPoints = function(plies=this.plies){
     return (plies.length == nbPlies)? points + allCardsBonus: points;
 };
 
-
+/**
+ * Returns the number of points made by the received team
+ * @param {Object} team 
+ * @returns {number} points
+ */
 playSchema.methods.calculatePointsTeam = function(team){
     let plieTeam = [];
     this.plies.forEach(plie =>{
@@ -79,6 +85,7 @@ playSchema.methods.getPreviousPlie = function(){
 
 playSchema.methods.clearPlies = function(){
     this.plies = [];
+    this.chibre = "";
 }
 
 const Play = mongoose.model('Play', playSchema);

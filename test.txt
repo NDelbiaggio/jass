@@ -1,193 +1,1369 @@
-let play = new Play({
+new Player({
+            id: "KVpSm71lq3E_XxeFAAAE",
+            cards: [
+                getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 10),
+                    
+            ]
+        }),new Player({
+            id: "BhVTrTIbLBzGDE7KAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 13),
+                    
+            ]
+        }),new Player({
+            id: "4rotuBeiIIBP0aDVAAAG",
+            cards: [
+                getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 14),
+                    
+            ]
+        }),new Player({
+            id: "tqZPcCIxg51pZBnCAAAH",
+            cards: [
+                getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "rvsSU6Gb2urDcQ_JAAAE",
+            cards: [
+                getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 6),
+                    
+            ]
+        }),new Player({
+            id: "s7Y7JYd3O7WEB89cAAAF",
+            cards: [
+                getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 7),
+                    
+            ]
+        }),new Player({
+            id: "PjtuPvLkF_oe3j5wAAAG",
+            cards: [
+                getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 6),
+                    
+            ]
+        }),new Player({
+            id: "-lvf-K-4LiQ4hojtAAAH",
+            cards: [
+                getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.diamonds, 8),
+                    
+            ]
+        }),new Player({
+            id: "n3jNPefmaUrjfuiBAAAE",
+            cards: [
+                getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 6),
+                    
+            ]
+        }),new Player({
+            id: "aF0uZ3I2OUuIpHaHAAAF",
+            cards: [
+                getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 11),
+                    
+            ]
+        }),new Player({
+            id: "TujCogB-tjBXENG7AAAG",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 11),
+                    
+            ]
+        }),new Player({
+            id: "77kd2O5pzj6GoUZ1AAAH",
+            cards: [
+                getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "6AJ2rRG-ikNWySumAAAB",
+            cards: [
+                getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 10),
+                    
+            ]
+        }),new Player({
+            id: "AoxMg0-88FTcV9NPAAAE",
+            cards: [
+                getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 9),
+                    
+            ]
+        }),new Player({
+            id: "YV4uh-8mNq7bX1zjAAAF",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 8),
+                    
+            ]
+        }),new Player({
+            id: "-ZpKtiQsEn_OckobAAAG",
+            cards: [
+                getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 9),
+                    
+            ]
+        }),new Player({
+            id: "M7RQeuYAeTBgPDjAAAAE",
+            cards: [
+                getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.diamonds, 9),
+                    
+            ]
+        }),new Player({
+            id: "gUJ5067dQngV75ekAAAF",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 12),
+                    
+            ]
+        }),new Player({
+            id: "r8WkqE7MBPAkHpHAAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 10),
+                    
+            ]
+        }),new Player({
+            id: "RZJ8vEERJNUxjyB8AAAH",
+            cards: [
+                getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 10),
+                    
+            ]
+        }),new Player({
+            id: "l_ZOGE_XiRTW1sfRAAAD",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 10),
+                    
+            ]
+        }),new Player({
+            id: "m2zYrg4ChJcO2j0AAAAE",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.diamonds, 14),
+                    
+            ]
+        }),new Player({
+            id: "RdL0jB0d9_6mqasGAAAF",
+            cards: [
+                getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 8),
+                    
+            ]
+        }),new Player({
+            id: "eB5FkFaQKsN4hxzOAAAG",
+            cards: [
+                getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 10),
+                    
+            ]
+        }),let play = new Play({
         plies: [
             new Plie({
                 number: 1,
-                highestCardIndex: "0",
-                leadingPlayer: "x4LiglF-N7CyE88YAAAE",
-                lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                highestCardIndex: "1",
+                leadingPlayer: "eB5FkFaQKsN4hxzOAAAG",
+                lastPlayer: "m2zYrg4ChJcO2j0AAAAE",
                 cards: [
-                    getCopyCard(types.spades, 14),
-                    getCopyCard(types.spades, 12),
-                    getCopyCard(types.spades, 11),
-                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 11),
                     
                 ]
             }),
         new Plie({
                 number: 2,
                 highestCardIndex: "2",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                leadingPlayer: "m2zYrg4ChJcO2j0AAAAE",
+                lastPlayer: "RdL0jB0d9_6mqasGAAAF",
                 cards: [
-                    getCopyCard(types.hearts, 6),
-                    getCopyCard(types.diamonds, 13),
-                    getCopyCard(types.hearts, 14),
-                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 8),
                     
                 ]
             }),
         new Plie({
                 number: 3,
-                highestCardIndex: "2",
-                leadingPlayer: "x4LiglF-N7CyE88YAAAE",
-                lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                highestCardIndex: "0",
+                leadingPlayer: "m2zYrg4ChJcO2j0AAAAE",
+                lastPlayer: "l_ZOGE_XiRTW1sfRAAAD",
                 cards: [
-                    getCopyCard(types.hearts, 12),
-                    getCopyCard(types.hearts, 7),
-                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 10),
                     getCopyCard(types.diamonds, 10),
                     
                 ]
             }),
         new Plie({
                 number: 4,
-                highestCardIndex: "3",
-                leadingPlayer: "JqCMSBFi-tITqBzxAAAH",
-                lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                highestCardIndex: "0",
+                leadingPlayer: "m2zYrg4ChJcO2j0AAAAE",
+                lastPlayer: "l_ZOGE_XiRTW1sfRAAAD",
                 cards: [
-                    getCopyCard(types.spades, 6),
-                    getCopyCard(types.spades, 7),
-                    getCopyCard(types.hearts, 8),
-                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 11),
                     
                 ]
             }),
         new Plie({
                 number: 5,
                 highestCardIndex: "3",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "xe0limtopblzSBglAAAG",
+                leadingPlayer: "l_ZOGE_XiRTW1sfRAAAD",
+                lastPlayer: "l_ZOGE_XiRTW1sfRAAAD",
                 cards: [
                     getCopyCard(types.clubs, 14),
-                    getCopyCard(types.diamonds, 7),
                     getCopyCard(types.clubs, 13),
-                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.hearts, 7),
                     
                 ]
             }),
         new Plie({
                 number: 6,
-                highestCardIndex: "0",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                highestCardIndex: "1",
+                leadingPlayer: "m2zYrg4ChJcO2j0AAAAE",
+                lastPlayer: "eB5FkFaQKsN4hxzOAAAG",
                 cards: [
-                    getCopyCard(types.clubs, 9),
-                    getCopyCard(types.clubs, 12),
-                    getCopyCard(types.spades, 9),
-                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 10),
                     
                 ]
             }),
         new Plie({
                 number: 7,
                 highestCardIndex: "0",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                leadingPlayer: "m2zYrg4ChJcO2j0AAAAE",
+                lastPlayer: "l_ZOGE_XiRTW1sfRAAAD",
                 cards: [
-                    getCopyCard(types.clubs, 10),
-                    getCopyCard(types.diamonds, 14),
-                    getCopyCard(types.diamonds, 9),
-                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 12),
                     
                 ]
             }),
         new Plie({
                 number: 8,
-                highestCardIndex: "0",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                highestCardIndex: "1",
+                leadingPlayer: "RdL0jB0d9_6mqasGAAAF",
+                lastPlayer: "l_ZOGE_XiRTW1sfRAAAD",
                 cards: [
-                    getCopyCard(types.hearts, 11),
-                    getCopyCard(types.diamonds, 12),
-                    getCopyCard(types.hearts, 9),
-                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 13),
                     
                 ]
             }),
         new Plie({
                 number: 9,
-                highestCardIndex: "0",
-                leadingPlayer: "xe0limtopblzSBglAAAG",
-                lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                highestCardIndex: "2",
+                leadingPlayer: "l_ZOGE_XiRTW1sfRAAAD",
+                lastPlayer: "m2zYrg4ChJcO2j0AAAAE",
                 cards: [
-                    getCopyCard(types.clubs, 6),
-                    getCopyCard(types.diamonds, 11),
-                    getCopyCard(types.diamonds, 8),
-                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 11),
                     
                 ]
             }),
         
         ],
-        atout: types.clubs
+        atout: types.hearts
     })
 
     let teamA = new Team({
         players: [
-            new Player({id: "x4LiglF-N7CyE88YAAAE"})
-            new Player({id: "xe0limtopblzSBglAAAG"})
+            new Player({id: "l_ZOGE_XiRTW1sfRAAAD"}),
+            new Player({id: "RdL0jB0d9_6mqasGAAAF"})
         ]
     });
     
     let teamB = new Team({
         players: [
-            new Player({id: "Gl_ZFaeHllOocQpSAAAF"})
-            new Player({id: "JqCMSBFi-tITqBzxAAAH"})
+            new Player({id: "m2zYrg4ChJcO2j0AAAAE"}),
+            new Player({id: "eB5FkFaQKsN4hxzOAAAG"})
         ]
     });
 
     const resultA = play.calculatePointsTeam(teamA);
     const resultB = play.calculatePointsTeam(teamB);
     
-    let play = new Play({
+    new Player({
+            id: "l_ZOGE_XiRTW1sfRAAAD",
+            cards: [
+                getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 6),
+                    
+            ]
+        }),new Player({
+            id: "m2zYrg4ChJcO2j0AAAAE",
+            cards: [
+                getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "RdL0jB0d9_6mqasGAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 8),
+                    
+            ]
+        }),new Player({
+            id: "eB5FkFaQKsN4hxzOAAAG",
+            cards: [
+                getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 13),
+                    
+            ]
+        }),new Player({
+            id: "EqoUtbjM_1kFt2rXAAAE",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "Co2hhJq8iHdtLhR-AAAF",
+            cards: [
+                getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.hearts, 10),
+                    
+            ]
+        }),new Player({
+            id: "JZU2arLXoxVAGJypAAAG",
+            cards: [
+                getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 9),
+                    
+            ]
+        }),new Player({
+            id: "dn9fBWg6dEEJ3qwHAAAH",
+            cards: [
+                getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 9),
+                    
+            ]
+        }),new Player({
+            id: "JDzS2jYONnL43RxJAAAE",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 11),
+                    
+            ]
+        }),new Player({
+            id: "34qMPo4VI-sVHceeAAAF",
+            cards: [
+                getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 9),
+                    
+            ]
+        }),new Player({
+            id: "4_eNq8k9IGUXo7a5AAAG",
+            cards: [
+                getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 11),
+                    
+            ]
+        }),new Player({
+            id: "2YOKh9RST9mZ9DPqAAAH",
+            cards: [
+                getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 9),
+                    
+            ]
+        }),new Player({
+            id: "da9csuGF_W9yjrqUAAAD",
+            cards: [
+                getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "dcr_KfNgVHIPqqq7AAAF",
+            cards: [
+                getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 6),
+                    
+            ]
+        }),new Player({
+            id: "EEz5O_hpUZtBODuxAAAG",
+            cards: [
+                getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 9),
+                    
+            ]
+        }),new Player({
+            id: "zuJQiTqoeAEM6ppPAAAH",
+            cards: [
+                getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 6),
+                    
+            ]
+        }),new Player({
+            id: "WIgtMRnyY7zkEV2bAAAC",
+            cards: [
+                getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 7),
+                    
+            ]
+        }),new Player({
+            id: "NWKKS0lkS42q07WSAAAE",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 8),
+                    
+            ]
+        }),new Player({
+            id: "keej1o_qaVyeUBnrAAAF",
+            cards: [
+                getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 6),
+                    
+            ]
+        }),new Player({
+            id: "7Wt-j--M45Mdk766AAAG",
+            cards: [
+                getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 12),
+                    
+            ]
+        }),new Player({
+            id: "8ypLx4wbGttmAp8GAAAE",
+            cards: [
+                getCopyCard(types.hearts, 10),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 12),
+                    
+            ]
+        }),new Player({
+            id: "Vwdr6m9sbarN0wDZAAAF",
+            cards: [
+                getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "gYNKwdsyHsZJ6bS1AAAG",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 6),
+                    
+            ]
+        }),new Player({
+            id: "JJqkRIWFXaZTFYesAAAH",
+            cards: [
+                getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.spades, 8),
+                    
+            ]
+        }),new Player({
+            id: "B0nME3yBXOkcY9lrAAAE",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 6),
+                    
+            ]
+        }),new Player({
+            id: "eHZv_1qKRfio1EBxAAAF",
+            cards: [
+                getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "RGS-pcpnS0Lx7JwTAAAG",
+            cards: [
+                getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 8),
+                    
+            ]
+        }),new Player({
+            id: "Tf0__w_6XB3FI73FAAAH",
+            cards: [
+                getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 14),
+                    
+            ]
+        }),new Player({
+            id: "hxcE6T-Dp6ruxN6QAAAD",
+            cards: [
+                getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 13),
+                    
+            ]
+        }),new Player({
+            id: "AMHzegL1BZ7J5v7yAAAE",
+            cards: [
+                getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "utJZivoHxyaCr67DAAAF",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 7),
+                    
+            ]
+        }),new Player({
+            id: "lC4usQ0g-mxZlsrXAAAG",
+            cards: [
+                getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 8),
+                    
+            ]
+        }),new Player({
+            id: "UnTBTWeXwwAJCxpBAAAE",
+            cards: [
+                getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "S1YykZzLomr0S7IpAAAF",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.spades, 12),
+                    
+            ]
+        }),new Player({
+            id: "1xoul4FHtR6hHgtOAAAG",
+            cards: [
+                getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 12),
+                    
+            ]
+        }),new Player({
+            id: "48yCNLQYGzG4ee-QAAAH",
+            cards: [
+                getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 13),
+                    
+            ]
+        }),new Player({
+            id: "5eC6A7YGB-LWNZrgAAAE",
+            cards: [
+                getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 10),
+                    
+            ]
+        }),new Player({
+            id: "UYuPKN3iydD8-7oxAAAF",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 13),
+                    
+            ]
+        }),new Player({
+            id: "n0iO_gy5OzKUQ-DCAAAG",
+            cards: [
+                getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 7),
+                    
+            ]
+        }),new Player({
+            id: "FH9PfAXoi3qp5VNqAAAH",
+            cards: [
+                getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),new Player({
+            id: "hqjN6sBlbjSB4GDSAAAE",
+            cards: [
+                getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 6),
+                    
+            ]
+        }),new Player({
+            id: "7HL_rgG-tNuf8edgAAAF",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 6),
+                    
+            ]
+        }),new Player({
+            id: "NXMymeSOAW6lqbwZAAAG",
+            cards: [
+                getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 7),
+                    
+            ]
+        }),new Player({
+            id: "BDNA2Wz1An7dAn8qAAAH",
+            cards: [
+                getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 10),
+                    
+            ]
+        }),new Player({
+            id: "M_Jv5Ay9W7Km4Tv-AAAC",
+            cards: [
+                getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 13),
+                    
+            ]
+        }),new Player({
+            id: "WrKZ4ASucqNRV18gAAAF",
+            cards: [
+                getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 6),
+                    
+            ]
+        }),new Player({
+            id: "c3fUw9kc9HQ-axcMAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 11),
+                    
+            ]
+        }),new Player({
+            id: "an3447qWEp9gTie8AAAH",
+            cards: [
+                getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 8),
+                    
+            ]
+        }),new Player({
+            id: "k8mmbAF1SKldbKa7AAAE",
+            cards: [
+                getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 9),
+                    
+            ]
+        }),new Player({
+            id: "VHp0pEjuufv6cywYAAAF",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 6),
+                    
+            ]
+        }),new Player({
+            id: "ISKWTUsOnkUQ74McAAAG",
+            cards: [
+                getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 13),
+                    
+            ]
+        }),new Player({
+            id: "RLX7EGISfOzwqaOnAAAH",
+            cards: [
+                getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 10),
+                    
+            ]
+        }),new Player({
+            id: "U_OmvP9-bB8Jsjm8AAAE",
+            cards: [
+                getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.hearts, 10),
+                    
+            ]
+        }),new Player({
+            id: "Hddez-Y-l-Xk4GjMAAAF",
+            cards: [
+                getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 14),
+                    
+            ]
+        }),new Player({
+            id: "87LTvm4yorEcg3dnAAAG",
+            cards: [
+                getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 12),
+                    
+            ]
+        }),new Player({
+            id: "BcNKpo9melbqytgrAAAH",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 11),
+                    
+            ]
+        }),new Player({
+            id: "PRLTONmSm6p7qDdpAAAA",
+            cards: [
+                getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.spades, 11),
+                    
+            ]
+        }),new Player({
+            id: "HOsUZcbrH3_TEqWYAAAE",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 6),
+                    
+            ]
+        }),new Player({
+            id: "07yg9ba2AodkCFxsAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 9),
+                    
+            ]
+        }),new Player({
+            id: "C02pbqhRWHnYjU_8AAAG",
+            cards: [
+                getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 14),
+                    
+            ]
+        }),let play = new Play({
         plies: [
             new Plie({
                 number: 1,
-                highestCardIndex: "0",
-                leadingPlayer: "cPy9oAmXHG8rgZlCAAAH",
-                lastPlayer: "ZXMb2tV6T4h19V08AAAG",
+                highestCardIndex: "2",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "HOsUZcbrH3_TEqWYAAAE",
                 cards: [
-                    getCopyCard(types.spades, 14),
-                    getCopyCard(types.spades, 8),
-                    getCopyCard(types.spades, 10),
-                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 6),
                     
                 ]
             }),
         new Plie({
                 number: 2,
                 highestCardIndex: "1",
-                leadingPlayer: "bTDg_m78WTqws-bBAAAE",
-                lastPlayer: "ZXMb2tV6T4h19V08AAAG",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
                 cards: [
-                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 12),
                     getCopyCard(types.diamonds, 14),
-                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 10),
                     getCopyCard(types.diamonds, 9),
                     
                 ]
             }),
         new Plie({
                 number: 3,
-                highestCardIndex: "0",
-                leadingPlayer: "bTDg_m78WTqws-bBAAAE",
-                lastPlayer: "cPy9oAmXHG8rgZlCAAAH",
+                highestCardIndex: "3",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "PRLTONmSm6p7qDdpAAAA",
                 cards: [
-                    getCopyCard(types.hearts, 14),
-                    getCopyCard(types.clubs, 7),
-                    getCopyCard(types.hearts, 13),
-                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 13),
                     
                 ]
             }),
         new Plie({
                 number: 4,
                 highestCardIndex: "3",
-                leadingPlayer: "cPy9oAmXHG8rgZlCAAAH",
-                lastPlayer: "cPy9oAmXHG8rgZlCAAAH",
+                leadingPlayer: "C02pbqhRWHnYjU_8AAAG",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
                 cards: [
-                    getCopyCard(types.hearts, 9),
-                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 6),
                     getCopyCard(types.hearts, 8),
                     getCopyCard(types.hearts, 11),
                     
@@ -195,66 +1371,263 @@ let play = new Play({
             }),
         new Plie({
                 number: 5,
-                highestCardIndex: "2",
-                leadingPlayer: "ftrQbgEiK3CvF_fTAAAF",
-                lastPlayer: "ZXMb2tV6T4h19V08AAAG",
+                highestCardIndex: "1",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "07yg9ba2AodkCFxsAAAF",
                 cards: [
-                    getCopyCard(types.spades, 6),
-                    getCopyCard(types.hearts, 6),
-                    getCopyCard(types.spades, 11),
-                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 13),
                     
                 ]
             }),
         new Plie({
                 number: 6,
-                highestCardIndex: "1",
-                leadingPlayer: "ZXMb2tV6T4h19V08AAAG",
-                lastPlayer: "bTDg_m78WTqws-bBAAAE",
+                highestCardIndex: "3",
+                leadingPlayer: "C02pbqhRWHnYjU_8AAAG",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
                 cards: [
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 9),
                     getCopyCard(types.clubs, 12),
-                    getCopyCard(types.clubs, 14),
-                    getCopyCard(types.clubs, 6),
-                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 14),
                     
                 ]
             }),
         new Plie({
                 number: 7,
-                highestCardIndex: "0",
-                leadingPlayer: "ZXMb2tV6T4h19V08AAAG",
-                lastPlayer: "ftrQbgEiK3CvF_fTAAAF",
+                highestCardIndex: "1",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "07yg9ba2AodkCFxsAAAF",
                 cards: [
-                    getCopyCard(types.clubs, 10),
-                    getCopyCard(types.diamonds, 8),
-                    getCopyCard(types.hearts, 10),
-                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.spades, 9),
                     
                 ]
             }),
         new Plie({
                 number: 8,
-                highestCardIndex: "3",
-                leadingPlayer: "ftrQbgEiK3CvF_fTAAAF",
-                lastPlayer: "ftrQbgEiK3CvF_fTAAAF",
+                highestCardIndex: "2",
+                leadingPlayer: "07yg9ba2AodkCFxsAAAF",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
                 cards: [
-                    getCopyCard(types.diamonds, 11),
-                    getCopyCard(types.spades, 7),
-                    getCopyCard(types.diamonds, 10),
-                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 8),
                     
                 ]
             }),
         new Plie({
                 number: 9,
-                highestCardIndex: "2",
-                leadingPlayer: "cPy9oAmXHG8rgZlCAAAH",
-                lastPlayer: "bTDg_m78WTqws-bBAAAE",
+                highestCardIndex: "0",
+                leadingPlayer: "07yg9ba2AodkCFxsAAAF",
+                lastPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                cards: [
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.clubs, 14),
+                    
+                ]
+            }),
+        
+        ],
+        atout: types.hearts
+    })
+
+    let teamA = new Team({
+        players: [
+            new Player({id: "PRLTONmSm6p7qDdpAAAA"}),
+            new Player({id: "07yg9ba2AodkCFxsAAAF"})
+        ]
+    });
+    
+    let teamB = new Team({
+        players: [
+            new Player({id: "HOsUZcbrH3_TEqWYAAAE"}),
+            new Player({id: "C02pbqhRWHnYjU_8AAAG"})
+        ]
+    });
+
+    const resultA = play.calculatePointsTeam(teamA);
+    const resultB = play.calculatePointsTeam(teamB);
+    
+    new Player({
+            id: "PRLTONmSm6p7qDdpAAAA",
+            cards: [
+                getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 12),
+                    
+            ]
+        }),new Player({
+            id: "HOsUZcbrH3_TEqWYAAAE",
+            cards: [
+                getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "07yg9ba2AodkCFxsAAAF",
+            cards: [
+                getCopyCard(types.spades, 6),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 7),
+                    
+            ]
+        }),new Player({
+            id: "C02pbqhRWHnYjU_8AAAG",
+            cards: [
+                getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 7),
+                    
+            ]
+        }),let play = new Play({
+        plies: [
+            new Plie({
+                number: 1,
+                highestCardIndex: "3",
+                leadingPlayer: "07yg9ba2AodkCFxsAAAF",
+                lastPlayer: "07yg9ba2AodkCFxsAAAF",
+                cards: [
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 9),
+                    
+                ]
+            }),
+        new Plie({
+                number: 2,
+                highestCardIndex: "0",
+                leadingPlayer: "07yg9ba2AodkCFxsAAAF",
+                lastPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                cards: [
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 6),
+                    
+                ]
+            }),
+        new Plie({
+                number: 3,
+                highestCardIndex: "3",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                cards: [
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 13),
+                    
+                ]
+            }),
+        new Plie({
+                number: 4,
+                highestCardIndex: "3",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "PRLTONmSm6p7qDdpAAAA",
                 cards: [
                     getCopyCard(types.diamonds, 12),
-                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.diamonds, 14),
+                    
+                ]
+            }),
+        new Plie({
+                number: 5,
+                highestCardIndex: "1",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
+                cards: [
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 10),
+                    
+                ]
+            }),
+        new Plie({
+                number: 6,
+                highestCardIndex: "0",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "PRLTONmSm6p7qDdpAAAA",
+                cards: [
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 14),
+                    
+                ]
+            }),
+        new Plie({
+                number: 7,
+                highestCardIndex: "3",
+                leadingPlayer: "PRLTONmSm6p7qDdpAAAA",
+                lastPlayer: "PRLTONmSm6p7qDdpAAAA",
+                cards: [
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.spades, 12),
+                    
+                ]
+            }),
+        new Plie({
+                number: 8,
+                highestCardIndex: "1",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "C02pbqhRWHnYjU_8AAAG",
+                cards: [
+                    getCopyCard(types.spades, 13),
                     getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 13),
+                    
+                ]
+            }),
+        new Plie({
+                number: 9,
+                highestCardIndex: "0",
+                leadingPlayer: "HOsUZcbrH3_TEqWYAAAE",
+                lastPlayer: "PRLTONmSm6p7qDdpAAAA",
+                cards: [
+                    getCopyCard(types.spades, 11),
                     getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 14),
                     
                 ]
             }),
@@ -265,264 +1638,432 @@ let play = new Play({
 
     let teamA = new Team({
         players: [
-            new Player({id: "bTDg_m78WTqws-bBAAAE"}),
-            new Player({id: "ZXMb2tV6T4h19V08AAAG"})
+            new Player({id: "PRLTONmSm6p7qDdpAAAA"}),
+            new Player({id: "07yg9ba2AodkCFxsAAAF"})
         ]
     });
     
     let teamB = new Team({
         players: [
-            new Player({id: "ftrQbgEiK3CvF_fTAAAF"}),
-            new Player({id: "cPy9oAmXHG8rgZlCAAAH"})
+            new Player({id: "HOsUZcbrH3_TEqWYAAAE"}),
+            new Player({id: "C02pbqhRWHnYjU_8AAAG"})
         ]
     });
 
     const resultA = play.calculatePointsTeam(teamA);
     const resultB = play.calculatePointsTeam(teamB);
     
-    let play = new Play({
+    new Player({
+            id: "PRLTONmSm6p7qDdpAAAA",
+            cards: [
+                getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.diamonds, 11),
+                    
+            ]
+        }),new Player({
+            id: "HOsUZcbrH3_TEqWYAAAE",
+            cards: [
+                getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 6),
+                    
+            ]
+        }),new Player({
+            id: "07yg9ba2AodkCFxsAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "C02pbqhRWHnYjU_8AAAG",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 8),
+                    
+            ]
+        }),new Player({
+            id: "WldTRsAG41-Wrra7AAAD",
+            cards: [
+                getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 8),
+                    
+            ]
+        }),new Player({
+            id: "T9Kz_4Tpdw97NAH8AAAE",
+            cards: [
+                getCopyCard(types.spades, 14),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.diamonds, 8),
+                    
+            ]
+        }),new Player({
+            id: "b9Y6UAZL8eifcsOUAAAF",
+            cards: [
+                getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 12),
+                    
+            ]
+        }),new Player({
+            id: "fdUMT3jVBQJfSYskAAAG",
+            cards: [
+                getCopyCard(types.clubs, 10),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 6),
+                    
+            ]
+        }),let play = new Play({
         plies: [
             new Plie({
                 number: 1,
-                highestCardIndex: "0",
-                leadingPlayer: "AyfKXTd03Wvx2I0hAAAE",
-                lastPlayer: "iQwRXoVgtmsd8ExeAAAH",
+                highestCardIndex: "3",
+                leadingPlayer: "b9Y6UAZL8eifcsOUAAAF",
+                lastPlayer: "b9Y6UAZL8eifcsOUAAAF",
                 cards: [
-                    getCopyCard(types.spades, 11),
-                    getCopyCard(types.spades, 9),
-                    getCopyCard(types.spades, 6),
-                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 13),
                     
                 ]
             }),
         new Plie({
                 number: 2,
                 highestCardIndex: "3",
-                leadingPlayer: "iQwRXoVgtmsd8ExeAAAH",
-                lastPlayer: "iQwRXoVgtmsd8ExeAAAH",
+                leadingPlayer: "T9Kz_4Tpdw97NAH8AAAE",
+                lastPlayer: "T9Kz_4Tpdw97NAH8AAAE",
                 cards: [
-                    getCopyCard(types.spades, 7),
                     getCopyCard(types.clubs, 8),
-                    getCopyCard(types.spades, 10),
-                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 13),
                     
                 ]
             }),
         new Plie({
                 number: 3,
-                highestCardIndex: "1",
-                leadingPlayer: "AyfKXTd03Wvx2I0hAAAE",
-                lastPlayer: "1sBjGnVTzlOUNeAuAAAG",
+                highestCardIndex: "3",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "WldTRsAG41-Wrra7AAAD",
                 cards: [
-                    getCopyCard(types.hearts, 10),
-                    getCopyCard(types.hearts, 12),
-                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 7),
                     getCopyCard(types.hearts, 7),
                     
                 ]
             }),
         new Plie({
                 number: 4,
-                highestCardIndex: "3",
-                leadingPlayer: "iQwRXoVgtmsd8ExeAAAH",
-                lastPlayer: "iQwRXoVgtmsd8ExeAAAH",
+                highestCardIndex: "2",
+                leadingPlayer: "b9Y6UAZL8eifcsOUAAAF",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 6),
                     getCopyCard(types.hearts, 14),
-                    getCopyCard(types.hearts, 13),
-                    getCopyCard(types.spades, 14),
-                    
-                ]
-            }),
-        new Plie({
-                number: 5,
-                highestCardIndex: "1",
-                leadingPlayer: "AyfKXTd03Wvx2I0hAAAE",
-                lastPlayer: "1sBjGnVTzlOUNeAuAAAG",
-                cards: [
-                    getCopyCard(types.diamonds, 14),
-                    getCopyCard(types.spades, 8),
-                    getCopyCard(types.diamonds, 12),
                     getCopyCard(types.diamonds, 9),
                     
                 ]
             }),
         new Plie({
-                number: 6,
-                highestCardIndex: "3",
-                leadingPlayer: "iQwRXoVgtmsd8ExeAAAH",
-                lastPlayer: "iQwRXoVgtmsd8ExeAAAH",
+                number: 5,
+                highestCardIndex: "2",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "T9Kz_4Tpdw97NAH8AAAE",
                 cards: [
-                    getCopyCard(types.hearts, 9),
-                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 14),
+                    
+                ]
+            }),
+        new Plie({
+                number: 6,
+                highestCardIndex: "0",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
+                cards: [
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 12),
                     getCopyCard(types.diamonds, 11),
-                    getCopyCard(types.hearts, 11),
                     
                 ]
             }),
         new Plie({
                 number: 7,
-                highestCardIndex: "2",
-                leadingPlayer: "KCJSrS2j5e3slJtIAAAF",
-                lastPlayer: "1sBjGnVTzlOUNeAuAAAG",
+                highestCardIndex: "3",
+                leadingPlayer: "fdUMT3jVBQJfSYskAAAG",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.clubs, 9),
-                    getCopyCard(types.clubs, 7),
-                    getCopyCard(types.clubs, 11),
-                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.hearts, 11),
                     
                 ]
             }),
         new Plie({
                 number: 8,
                 highestCardIndex: "1",
-                leadingPlayer: "1sBjGnVTzlOUNeAuAAAG",
-                lastPlayer: "AyfKXTd03Wvx2I0hAAAE",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "b9Y6UAZL8eifcsOUAAAF",
                 cards: [
-                    getCopyCard(types.diamonds, 10),
-                    getCopyCard(types.diamonds, 13),
-                    getCopyCard(types.diamonds, 8),
-                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 11),
                     
                 ]
             }),
         new Plie({
                 number: 9,
-                highestCardIndex: "0",
-                leadingPlayer: "1sBjGnVTzlOUNeAuAAAG",
-                lastPlayer: "KCJSrS2j5e3slJtIAAAF",
+                highestCardIndex: "1",
+                leadingPlayer: "T9Kz_4Tpdw97NAH8AAAE",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 14),
                     getCopyCard(types.clubs, 14),
-                    getCopyCard(types.clubs, 6),
-                    getCopyCard(types.clubs, 12),
-                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.spades, 10),
                     
                 ]
             }),
         
         ],
-        atout: types.spades
+        atout: types.hearts
     })
 
     let teamA = new Team({
         players: [
-            new Player({id: "AyfKXTd03Wvx2I0hAAAE"}),
-            new Player({id: "1sBjGnVTzlOUNeAuAAAG"})
+            new Player({id: "WldTRsAG41-Wrra7AAAD"}),
+            new Player({id: "b9Y6UAZL8eifcsOUAAAF"})
         ]
     });
     
     let teamB = new Team({
         players: [
-            new Player({id: "KCJSrS2j5e3slJtIAAAF"}),
-            new Player({id: "iQwRXoVgtmsd8ExeAAAH"})
+            new Player({id: "T9Kz_4Tpdw97NAH8AAAE"}),
+            new Player({id: "fdUMT3jVBQJfSYskAAAG"})
         ]
     });
 
     const resultA = play.calculatePointsTeam(teamA);
     const resultB = play.calculatePointsTeam(teamB);
     
-    let play = new Play({
+    new Player({
+            id: "WldTRsAG41-Wrra7AAAD",
+            cards: [
+                getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 6),
+                    
+            ]
+        }),new Player({
+            id: "T9Kz_4Tpdw97NAH8AAAE",
+            cards: [
+                getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 10),
+                    
+            ]
+        }),new Player({
+            id: "b9Y6UAZL8eifcsOUAAAF",
+            cards: [
+                getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 13),
+                    
+            ]
+        }),new Player({
+            id: "fdUMT3jVBQJfSYskAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 12),
+                    
+            ]
+        }),let play = new Play({
         plies: [
             new Plie({
                 number: 1,
-                highestCardIndex: "2",
-                leadingPlayer: "lkpHVvSKnXE_bJAPAAAF",
-                lastPlayer: "Sw-lahC9hqqz2wJgAAAG",
+                highestCardIndex: "3",
+                leadingPlayer: "fdUMT3jVBQJfSYskAAAG",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.clubs, 12),
-                    getCopyCard(types.clubs, 7),
-                    getCopyCard(types.clubs, 11),
-                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 10),
                     
                 ]
             }),
         new Plie({
                 number: 2,
-                highestCardIndex: "3",
-                leadingPlayer: "_pyzKvFiyAKpwsCQAAAE",
-                lastPlayer: "_pyzKvFiyAKpwsCQAAAE",
+                highestCardIndex: "1",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "b9Y6UAZL8eifcsOUAAAF",
                 cards: [
+                    getCopyCard(types.diamonds, 11),
                     getCopyCard(types.diamonds, 13),
-                    getCopyCard(types.diamonds, 8),
-                    getCopyCard(types.diamonds, 12),
-                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.diamonds, 9),
                     
                 ]
             }),
         new Plie({
                 number: 3,
                 highestCardIndex: "1",
-                leadingPlayer: "lkpHVvSKnXE_bJAPAAAF",
-                lastPlayer: "lWjle0POxDTGXzc8AAAH",
+                leadingPlayer: "T9Kz_4Tpdw97NAH8AAAE",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.spades, 6),
-                    getCopyCard(types.clubs, 9),
-                    getCopyCard(types.spades, 14),
-                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 8),
                     
                 ]
             }),
         new Plie({
                 number: 4,
                 highestCardIndex: "2",
-                leadingPlayer: "lWjle0POxDTGXzc8AAAH",
-                lastPlayer: "_pyzKvFiyAKpwsCQAAAE",
+                leadingPlayer: "fdUMT3jVBQJfSYskAAAG",
+                lastPlayer: "WldTRsAG41-Wrra7AAAD",
                 cards: [
-                    getCopyCard(types.diamonds, 9),
-                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 14),
                     getCopyCard(types.clubs, 13),
-                    getCopyCard(types.diamonds, 6),
                     
                 ]
             }),
         new Plie({
                 number: 5,
                 highestCardIndex: "2",
-                leadingPlayer: "lkpHVvSKnXE_bJAPAAAF",
-                lastPlayer: "Sw-lahC9hqqz2wJgAAAG",
+                leadingPlayer: "T9Kz_4Tpdw97NAH8AAAE",
+                lastPlayer: "b9Y6UAZL8eifcsOUAAAF",
                 cards: [
-                    getCopyCard(types.diamonds, 7),
-                    getCopyCard(types.diamonds, 10),
-                    getCopyCard(types.clubs, 14),
-                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 9),
                     
                 ]
             }),
         new Plie({
                 number: 6,
-                highestCardIndex: "2",
-                leadingPlayer: "lWjle0POxDTGXzc8AAAH",
-                lastPlayer: "_pyzKvFiyAKpwsCQAAAE",
+                highestCardIndex: "3",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "WldTRsAG41-Wrra7AAAD",
                 cards: [
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.hearts, 6),
                     getCopyCard(types.hearts, 8),
-                    getCopyCard(types.hearts, 10),
-                    getCopyCard(types.hearts, 14),
-                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 11),
                     
                 ]
             }),
         new Plie({
                 number: 7,
                 highestCardIndex: "0",
-                leadingPlayer: "lWjle0POxDTGXzc8AAAH",
-                lastPlayer: "Sw-lahC9hqqz2wJgAAAG",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.clubs, 6),
-                    getCopyCard(types.spades, 11),
-                    getCopyCard(types.hearts, 13),
-                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 14),
                     
                 ]
             }),
         new Plie({
                 number: 8,
-                highestCardIndex: "0",
-                leadingPlayer: "lWjle0POxDTGXzc8AAAH",
-                lastPlayer: "Sw-lahC9hqqz2wJgAAAG",
+                highestCardIndex: "2",
+                leadingPlayer: "b9Y6UAZL8eifcsOUAAAF",
+                lastPlayer: "fdUMT3jVBQJfSYskAAAG",
                 cards: [
-                    getCopyCard(types.spades, 13),
-                    getCopyCard(types.spades, 7),
-                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.hearts, 13),
                     getCopyCard(types.spades, 8),
                     
                 ]
@@ -530,36 +2071,401 @@ let play = new Play({
         new Plie({
                 number: 9,
                 highestCardIndex: "2",
-                leadingPlayer: "lkpHVvSKnXE_bJAPAAAF",
-                lastPlayer: "Sw-lahC9hqqz2wJgAAAG",
+                leadingPlayer: "WldTRsAG41-Wrra7AAAD",
+                lastPlayer: "T9Kz_4Tpdw97NAH8AAAE",
                 cards: [
-                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 11),
                     getCopyCard(types.spades, 12),
-                    getCopyCard(types.hearts, 9),
-                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 13),
                     
                 ]
             }),
         
         ],
-        atout: types.clubs
+        atout: types.hearts
     })
 
     let teamA = new Team({
         players: [
-            new Player({id: "_pyzKvFiyAKpwsCQAAAE"}),
-            new Player({id: "Sw-lahC9hqqz2wJgAAAG"})
+            new Player({id: "WldTRsAG41-Wrra7AAAD"}),
+            new Player({id: "b9Y6UAZL8eifcsOUAAAF"})
         ]
     });
     
     let teamB = new Team({
         players: [
-            new Player({id: "lkpHVvSKnXE_bJAPAAAF"}),
-            new Player({id: "lWjle0POxDTGXzc8AAAH"})
+            new Player({id: "T9Kz_4Tpdw97NAH8AAAE"}),
+            new Player({id: "fdUMT3jVBQJfSYskAAAG"})
         ]
     });
 
     const resultA = play.calculatePointsTeam(teamA);
     const resultB = play.calculatePointsTeam(teamB);
     
+    new Player({
+            id: "WldTRsAG41-Wrra7AAAD",
+            cards: [
+                getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 9),
+                    
+            ]
+        }),new Player({
+            id: "T9Kz_4Tpdw97NAH8AAAE",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 10),
+                    
+            ]
+        }),new Player({
+            id: "b9Y6UAZL8eifcsOUAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 6),
+                    
+            ]
+        }),new Player({
+            id: "fdUMT3jVBQJfSYskAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 10),
+                    
+            ]
+        }),new Player({
+            id: "Z3MEahqYCVbk8x-VAAAE",
+            cards: [
+                getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 8),
+                    
+            ]
+        }),new Player({
+            id: "2neCWBCZtC4juZfyAAAF",
+            cards: [
+                getCopyCard(types.hearts, 14),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.spades, 10),
+                    
+            ]
+        }),new Player({
+            id: "tLjolQIEwGjUrFtVAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.clubs, 12),
+                    
+            ]
+        }),new Player({
+            id: "LnB656tpOfSjXS_lAAAH",
+            cards: [
+                getCopyCard(types.spades, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.spades, 12),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.clubs, 13),
+                    
+            ]
+        }),new Player({
+            id: "ymVRRykHFkqcOhhsAAAC",
+            cards: [
+                getCopyCard(types.clubs, 12),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 10),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.spades, 9),
+                    
+            ]
+        }),new Player({
+            id: "Dslp3Ap2YoickalqAAAF",
+            cards: [
+                getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 8),
+                    
+            ]
+        }),new Player({
+            id: "ctHKfsNODi-az-mZAAAG",
+            cards: [
+                getCopyCard(types.hearts, 7),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 12),
+                    
+            ]
+        }),new Player({
+            id: "P_Rbk_wTTmNnJSHaAAAH",
+            cards: [
+                getCopyCard(types.clubs, 10),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 11),
+                    
+            ]
+        }),let play = new Play({
+        plies: [
+            new Plie({
+                number: 1,
+                highestCardIndex: "3",
+                leadingPlayer: "P_Rbk_wTTmNnJSHaAAAH",
+                lastPlayer: "P_Rbk_wTTmNnJSHaAAAH",
+                cards: [
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 8),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.diamonds, 9),
+                    
+                ]
+            }),
+        new Plie({
+                number: 2,
+                highestCardIndex: "2",
+                leadingPlayer: "Dslp3Ap2YoickalqAAAF",
+                lastPlayer: "ctHKfsNODi-az-mZAAAG",
+                cards: [
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.diamonds, 10),
+                    
+                ]
+            }),
+        new Plie({
+                number: 3,
+                highestCardIndex: "1",
+                leadingPlayer: "ctHKfsNODi-az-mZAAAG",
+                lastPlayer: "ymVRRykHFkqcOhhsAAAC",
+                cards: [
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.clubs, 6),
+                    
+                ]
+            }),
+        new Plie({
+                number: 4,
+                highestCardIndex: "3",
+                leadingPlayer: "Dslp3Ap2YoickalqAAAF",
+                lastPlayer: "Dslp3Ap2YoickalqAAAF",
+                cards: [
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.hearts, 10),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.hearts, 9),
+                    
+                ]
+            }),
+        new Plie({
+                number: 5,
+                highestCardIndex: "1",
+                leadingPlayer: "ctHKfsNODi-az-mZAAAG",
+                lastPlayer: "ymVRRykHFkqcOhhsAAAC",
+                cards: [
+                    getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.clubs, 12),
+                    
+                ]
+            }),
+        new Plie({
+                number: 6,
+                highestCardIndex: "3",
+                leadingPlayer: "Dslp3Ap2YoickalqAAAF",
+                lastPlayer: "Dslp3Ap2YoickalqAAAF",
+                cards: [
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.hearts, 11),
+                    
+                ]
+            }),
+        new Plie({
+                number: 7,
+                highestCardIndex: "0",
+                leadingPlayer: "Dslp3Ap2YoickalqAAAF",
+                lastPlayer: "ymVRRykHFkqcOhhsAAAC",
+                cards: [
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.clubs, 11),
+                    getCopyCard(types.spades, 9),
+                    
+                ]
+            }),
+        new Plie({
+                number: 8,
+                highestCardIndex: "2",
+                leadingPlayer: "P_Rbk_wTTmNnJSHaAAAH",
+                lastPlayer: "ymVRRykHFkqcOhhsAAAC",
+                cards: [
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.spades, 11),
+                    getCopyCard(types.spades, 10),
+                    
+                ]
+            }),
+        new Plie({
+                number: 9,
+                highestCardIndex: "0",
+                leadingPlayer: "P_Rbk_wTTmNnJSHaAAAH",
+                lastPlayer: "ctHKfsNODi-az-mZAAAG",
+                cards: [
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.spades, 12),
+                    
+                ]
+            }),
+        
+        ],
+        atout: types.hearts
+    })
+
+    let teamA = new Team({
+        players: [
+            new Player({id: "ymVRRykHFkqcOhhsAAAC"}),
+            new Player({id: "ctHKfsNODi-az-mZAAAG"})
+        ]
+    });
     
+    let teamB = new Team({
+        players: [
+            new Player({id: "Dslp3Ap2YoickalqAAAF"}),
+            new Player({id: "P_Rbk_wTTmNnJSHaAAAH"})
+        ]
+    });
+
+    const resultA = play.calculatePointsTeam(teamA);
+    const resultB = play.calculatePointsTeam(teamB);
+    
+    new Player({
+            id: "ymVRRykHFkqcOhhsAAAC",
+            cards: [
+                getCopyCard(types.spades, 12),
+                    getCopyCard(types.hearts, 6),
+                    getCopyCard(types.diamonds, 6),
+                    getCopyCard(types.hearts, 14),
+                    getCopyCard(types.spades, 13),
+                    getCopyCard(types.diamonds, 10),
+                    getCopyCard(types.spades, 7),
+                    getCopyCard(types.hearts, 9),
+                    getCopyCard(types.clubs, 11),
+                    
+            ]
+        }),new Player({
+            id: "Dslp3Ap2YoickalqAAAF",
+            cards: [
+                getCopyCard(types.clubs, 8),
+                    getCopyCard(types.hearts, 8),
+                    getCopyCard(types.clubs, 6),
+                    getCopyCard(types.clubs, 9),
+                    getCopyCard(types.hearts, 11),
+                    getCopyCard(types.clubs, 14),
+                    getCopyCard(types.clubs, 12),
+                    getCopyCard(types.clubs, 13),
+                    getCopyCard(types.diamonds, 8),
+                    
+            ]
+        }),new Player({
+            id: "ctHKfsNODi-az-mZAAAG",
+            cards: [
+                getCopyCard(types.diamonds, 11),
+                    getCopyCard(types.spades, 8),
+                    getCopyCard(types.hearts, 7),
+                    getCopyCard(types.clubs, 7),
+                    getCopyCard(types.diamonds, 13),
+                    getCopyCard(types.spades, 14),
+                    getCopyCard(types.diamonds, 7),
+                    getCopyCard(types.diamonds, 9),
+                    getCopyCard(types.spades, 11),
+                    
+            ]
+        }),new Player({
+            id: "P_Rbk_wTTmNnJSHaAAAH",
+            cards: [
+                getCopyCard(types.hearts, 10),
+                    getCopyCard(types.clubs, 10),
+                    getCopyCard(types.hearts, 13),
+                    getCopyCard(types.spades, 9),
+                    getCopyCard(types.hearts, 12),
+                    getCopyCard(types.diamonds, 14),
+                    getCopyCard(types.spades, 6),
+                    getCopyCard(types.diamonds, 12),
+                    getCopyCard(types.spades, 10),
+                    
+            ]
+        }),

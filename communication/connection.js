@@ -10,8 +10,10 @@ module.exports = function(server){
         addPlayerListener(io, socket, game);
         
         socket.on('disconnect', () => {
-            disconnectPlayer(socket.id, game);
-            console.log('I disconnect');
+            if(socket.addedUser){
+                disconnectPlayer(socket.id, game);
+                console.log('I disconnect');
+            }
         });
         
     });

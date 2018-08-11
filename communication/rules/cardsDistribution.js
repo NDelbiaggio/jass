@@ -1,5 +1,7 @@
 const {generateHands} = require('../../db/hands');
 
+const {writePlayersWithHands} = require('../../developmentTools/recordGame');
+
 const eventName = "cards distribution"
 
 module.exports = function distributeCards(io, players, cb){
@@ -10,5 +12,7 @@ module.exports = function distributeCards(io, players, cb){
         
         io.to(player.id).emit(eventName, {cards: player.cards});                    
     }
-    cb();     
+
+    writePlayersWithHands(players, cb);
+    // cb(); 
 }

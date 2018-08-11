@@ -36,6 +36,10 @@ teamSchema.methods.removePlayer = function(player){
     return false;
 }
 
+teamSchema.methods.increasePoints = function(points){
+    this.points += points;
+}
+
 const Team = mongoose.model('Team', teamSchema);
 
 exports.teamSchema = teamSchema;

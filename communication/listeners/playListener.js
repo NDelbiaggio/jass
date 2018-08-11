@@ -1,33 +1,33 @@
 const {notifyPlayerToPlay, notifyNextPlayerToPlay} = require('../notifiers/notifyPlayerToPlay');
-const notifyToChoseAtout = require('../notifiers/notifyToChoseAtout');
+const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
+const notifyPlayPoints = require('../notifiers/notifyPlayPoints');
 
 const {Play} = require('../../models/play');
 
 const distributeCards = require('../rules/cardsDistribution');
 const {isCardPlayable} = require('../rules/cardPlayable');
-const printResults = require('../../developmentTools/recordGame');
+const {findCurrentPlayer} = require('../rules/findCurrentPlayer');
+const {printPlay} = require('../../developmentTools/recordGame');
 
 const cardsPerPlie = 4;
 const eventName = "play";
 
-module.exports = function(io, socket, players, play){
+module.exports = function(io, socket, players, play, teamA, teamB){
     
     var playLst = socket.on(eventName, (card) => {
         let plie = play.getCurrentPlie();          
-        let currentPlayerId = findCurrentPlayer(plie, play, players);        
+        let currentPlayer = findCurrentPlayer(plie, play, players);     
 
         //Check if the correct player played
-        if(socket.id != currentPlayerId) {
-            return console.log(`IT IS NOT YOUR TURN, IT IS ${currentPlayerId} turn`);            
+        if(socket.id != currentPlayer.id) {
+            return console.log(`IT IS NOT YOUR TURN, IT IS ${currentPlayer.id} turn`);            
         };
 
-        let player = players.find((p)=>p.id == socket.id);     
-        const isAllowedToBePlayed = isCardPlayable(card, play.atout, plie, player.cards);    
+        const isAllowedToBePlayed = isCardPlayable(card, play.atout, plie, currentPlayer.cards);    
 
         if(isAllowedToBePlayed){
             //1) add the card to the plie
-            player.playCard(card._id);
-            
+            currentPlayer.playCard(card._id);
             const plieLength = play.getCurrentPlie().addCardPlayed(play.atout, card, socket.id);
             
             //2) notify the others players about the card
@@ -35,54 +35,43 @@ module.exports = function(io, socket, players, play){
 
             //3) check if 4 cards have been played
             if(plieLength == cardsPerPlie){
-                //3b) update the play points
-
-                //3c) create a new plie
                 if(plie.number == 9){
-                    console.log(play)
-                    printResults(play, players, ()=>{
+                    calculateAndNotifyPoints(play, teamA, teamB);
+
+                    printPlay(play, players, ()=>{
                         console.log("The play has been saved.");
                         play.clearPlies();
                         distributeCards(io, players, ()=>{
-                            notifyToChoseAtout(io, players, play);
+                            notifyToChooseAtout(io, players, play);
                         });
                     })
-                    // const pointA = play.calculatePointsTeam([players[0],players[2]]);
-                    // const pointB = play.calculatePointsTeam([players[1],players[3]]);
-                    // console.log("POINTSA : ")
-                    // console.log("POINTSB : ")
 
-                    
                 }else{
                     play.createNewPlie();
                     let leader = players.find(p=> p.id == plie.leadingPlayer);                 
                     notifyPlayerToPlay(io, leader.id);
                 }
             }else{
-                let currentPlayerInd = players.indexOf(player);
+                let currentPlayerInd = players.indexOf(currentPlayer);
                 notifyNextPlayerToPlay(io, players, currentPlayerInd);
             }
         }else {
             throw new Error('it is not allowed to play this card');
         }
     });
-}
 
-function findCurrentPlayer(plie, play, players){
-    if(plie.cards.length == 0){
-        if(plie.number == 1){
-            return play.atoutChosenBy;
-        }else{
-            let lastPlie = play.getPreviousPlie();
-            return lastPlie.leadingPlayer;
-        }
-    }else{
-        let lastPlayerInd = players.findIndex((p)=>p.id == plie.lastPlayer);
-        nxtInd = lastPlayerInd == players.length-1? 0: lastPlayerInd + 1;
-        return players[nxtInd].id;
+    function calculateAndNotifyPoints(play, teamA, teamB){
+        const pointsA = play.calculatePointsTeam(teamA);
+        const pointsB = play.calculatePointsTeam(teamB);
+
+        teamA.increasePoints(pointsA);
+        teamB.increasePoints(pointsB);
+
+        notifyPlayPoints(io, {
+            totalA : teamA.points,
+            totalB : teamB.points,
+            playPointsA : pointsA,
+            playPointsB : pointsB
+        });
     }
 }
-
-
-
-

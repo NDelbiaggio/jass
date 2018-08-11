@@ -7,7 +7,7 @@ const bonusLast = 5;
 const plieSchema = new mongoose.Schema({
     number: {
         type: Number,
-        default: 0
+        default: 1
     },
     cards: {
         type: [cardSchema],
