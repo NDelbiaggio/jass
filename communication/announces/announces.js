@@ -14,8 +14,6 @@ function findAnnounces(hand){
         cards = removeCardsFromAnnounceHand(cards, fourJacks.cards);
     }
     const fourNines = find4Nines(cards);
-    console.log(JSON.stringify(fourNines))
-    console.log("FDP5")
     if(fourNines){
         announces.push(fourNines.announce);
         cards = removeCardsFromAnnounceHand(cards, fourNines.cards);

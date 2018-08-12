@@ -38,8 +38,8 @@ module.exports.addPlayerListener = function(io, socket, game){
 
         addedUser = true; 
         socket.addedUser = true;
+        socket.emit('login',{playerName: name});
         notifyPlayerJoined(io, name, players);          
-        socket.emit('login',{playerName: `user ${players.length}`});
         
         registerListeners(io, socket, game);           
     });

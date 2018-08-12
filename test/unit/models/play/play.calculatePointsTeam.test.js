@@ -3,8 +3,27 @@ const {Play} = require('../../../../models/play');
 const {Plie} = require('../../../../models/plie');
 const {Team} = require('../../../../models/team');
 const {Player} = require('../../../../models/player');
+const mongoose = require('mongoose');
 
 describe("play.calculatePointsTeam", ()=>{
+    let player1 = mongoose.Types.ObjectId();
+    let player2 = mongoose.Types.ObjectId();
+    let player3 = mongoose.Types.ObjectId();
+    let player4 = mongoose.Types.ObjectId();
+    
+    let teamA = new Team({            
+        players: [
+            new Player({_id: player1}),
+            new Player({_id: player3})
+        ]
+    });
+    let teamB = new Team({            
+        players: [
+            new Player({_id: player2}),
+            new Player({_id: player4})
+        ]
+    });
+
 
     it('should return 257 points for one team and 0 for the other one when a team gets all the plies', ()=>{
         let play = new Play({
@@ -12,8 +31,8 @@ describe("play.calculatePointsTeam", ()=>{
                 new Plie({
                     number: 1,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 11),
                         getCopyCard(types.diamonds, 6),
@@ -24,8 +43,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 2,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 9),
                         getCopyCard(types.diamonds, 12),
@@ -36,8 +55,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 3,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.hearts, 13),
                         getCopyCard(types.hearts, 9),
@@ -48,8 +67,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 4,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 7),
                         getCopyCard(types.hearts, 14),
@@ -60,8 +79,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 5,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 8),
                         getCopyCard(types.clubs, 14),
@@ -72,8 +91,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 6,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 10),
                         getCopyCard(types.spades, 14),
@@ -84,8 +103,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 7,
                     highestCardIndex: 0,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 13),
                         getCopyCard(types.clubs, 13),
@@ -96,8 +115,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 8,
                     highestCardIndex: 2,
-                    leadingPlayer: "_ilsUvWO4jA5-1-fAAAH",
-                    lastPlayer: "OXjuG7o8cqu6b8DDAAAE",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.spades, 10),
                         getCopyCard(types.spades, 6),
@@ -108,8 +127,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 9,
                     highestCardIndex: 3,
-                    leadingPlayer: "77bd-4E1AQ7s8uBKAAAF",
-                    lastPlayer: "3yhkUDmo1sNULXDbAAAG",
+                    leadingPlayer: player1,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.clubs, 9),
                         getCopyCard(types.spades, 8),
@@ -120,19 +139,6 @@ describe("play.calculatePointsTeam", ()=>{
             
             ],
             atout: types.diamonds
-        });
-
-        let teamA = new Team({            
-            players: [
-                new Player({id: "77bd-4E1AQ7s8uBKAAAF"}),
-                new Player({id: "_ilsUvWO4jA5-1-fAAAH"})
-            ]
-        });
-        let teamB = new Team({            
-            players: [
-                new Player({id: "OXjuG7o8cqu6b8DDAAAE"}),
-                new Player({id: "3yhkUDmo1sNULXDbAAAG"})
-            ]
         });
 
         const resultA = play.calculatePointsTeam(teamA);
@@ -148,8 +154,8 @@ describe("play.calculatePointsTeam", ()=>{
                 new Plie({
                     number: 1,
                     highestCardIndex: "0",
-                    leadingPlayer: "gz4hbKKsldlBLuTfAAAE",
-                    lastPlayer: "SlQLwX1nutgmkWtcAAAH",
+                    leadingPlayer: player1,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.diamonds, 11),
                         getCopyCard(types.diamonds, 6),
@@ -160,8 +166,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 2,
                     highestCardIndex: "2",
-                    leadingPlayer: "F2nYgjEin7a0P6siAAAG",
-                    lastPlayer: "SlQLwX1nutgmkWtcAAAH",
+                    leadingPlayer: player3,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.diamonds, 7),
                         getCopyCard(types.spades, 6),
@@ -172,8 +178,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 3,
                     highestCardIndex: "0",
-                    leadingPlayer: "F2nYgjEin7a0P6siAAAG",
-                    lastPlayer: "xZ1gUrYlVSjvrk11AAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.diamonds, 9),
                         getCopyCard(types.clubs, 11),
@@ -184,8 +190,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 4,
                     highestCardIndex: "3",
-                    leadingPlayer: "xZ1gUrYlVSjvrk11AAAF",
-                    lastPlayer: "xZ1gUrYlVSjvrk11AAAF",
+                    leadingPlayer: player2,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 6),
                         getCopyCard(types.spades, 7),
@@ -196,8 +202,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 5,
                     highestCardIndex: "1",
-                    leadingPlayer: "F2nYgjEin7a0P6siAAAG",
-                    lastPlayer: "gz4hbKKsldlBLuTfAAAE",
+                    leadingPlayer: player3,
+                    lastPlayer: player1,
                     cards: [
                         getCopyCard(types.clubs, 7),
                         getCopyCard(types.clubs, 12),
@@ -208,8 +214,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 6,
                     highestCardIndex: "0",
-                    leadingPlayer: "F2nYgjEin7a0P6siAAAG",
-                    lastPlayer: "xZ1gUrYlVSjvrk11AAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 10),
                         getCopyCard(types.spades, 13),
@@ -220,8 +226,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 7,
                     highestCardIndex: "0",
-                    leadingPlayer: "F2nYgjEin7a0P6siAAAG",
-                    lastPlayer: "xZ1gUrYlVSjvrk11AAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 8),
                         getCopyCard(types.hearts, 12),
@@ -232,8 +238,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 8,
                     highestCardIndex: "1",
-                    leadingPlayer: "SlQLwX1nutgmkWtcAAAH",
-                    lastPlayer: "xZ1gUrYlVSjvrk11AAAF",
+                    leadingPlayer: player4,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.spades, 10),
                         getCopyCard(types.spades, 14),
@@ -244,8 +250,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 9,
                     highestCardIndex: "1",
-                    leadingPlayer: "gz4hbKKsldlBLuTfAAAE",
-                    lastPlayer: "F2nYgjEin7a0P6siAAAG",
+                    leadingPlayer: player1,
+                    lastPlayer: player3,
                     cards: [
                         getCopyCard(types.hearts, 14),
                         getCopyCard(types.diamonds, 14),
@@ -256,20 +262,6 @@ describe("play.calculatePointsTeam", ()=>{
             ],
             atout: types.diamonds
         });
-
-        let teamA = new Team({
-            players: [
-                new Player({id: "gz4hbKKsldlBLuTfAAAE"}),
-                new Player({id: "F2nYgjEin7a0P6siAAAG"}),
-            ]
-        });
-
-        let teamB = new Team({
-            players: [
-                new Player({id: "xZ1gUrYlVSjvrk11AAAF"}),
-                new Player({id: "SlQLwX1nutgmkWtcAAAH"}),
-            ]
-        })
 
         const resultA = play.calculatePointsTeam(teamA);
         const resultB = play.calculatePointsTeam(teamB);
@@ -285,8 +277,8 @@ describe("play.calculatePointsTeam", ()=>{
                 new Plie({
                     number: 1,
                     highestCardIndex: "0",
-                    leadingPlayer: "x4LiglF-N7CyE88YAAAE",
-                    lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                    leadingPlayer: player1,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.spades, 14),
                         getCopyCard(types.spades, 12),
@@ -297,8 +289,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 2,
                     highestCardIndex: "2",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                    leadingPlayer: player3,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.hearts, 6),
                         getCopyCard(types.diamonds, 13),
@@ -309,8 +301,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 3,
                     highestCardIndex: "2",
-                    leadingPlayer: "x4LiglF-N7CyE88YAAAE",
-                    lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                    leadingPlayer: player1,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.hearts, 12),
                         getCopyCard(types.hearts, 7),
@@ -321,8 +313,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 4,
                     highestCardIndex: "3",
-                    leadingPlayer: "JqCMSBFi-tITqBzxAAAH",
-                    lastPlayer: "JqCMSBFi-tITqBzxAAAH",
+                    leadingPlayer: player4,
+                    lastPlayer: player4,
                     cards: [
                         getCopyCard(types.spades, 6),
                         getCopyCard(types.spades, 7),
@@ -333,8 +325,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 5,
                     highestCardIndex: "3",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "xe0limtopblzSBglAAAG",
+                    leadingPlayer: player3,
+                    lastPlayer: player3,
                     cards: [
                         getCopyCard(types.clubs, 14),
                         getCopyCard(types.diamonds, 7),
@@ -345,8 +337,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 6,
                     highestCardIndex: "0",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 9),
                         getCopyCard(types.clubs, 12),
@@ -357,8 +349,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 7,
                     highestCardIndex: "0",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 10),
                         getCopyCard(types.diamonds, 14),
@@ -369,8 +361,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 8,
                     highestCardIndex: "0",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.hearts, 11),
                         getCopyCard(types.diamonds, 12),
@@ -381,8 +373,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Plie({
                     number: 9,
                     highestCardIndex: "0",
-                    leadingPlayer: "xe0limtopblzSBglAAAG",
-                    lastPlayer: "Gl_ZFaeHllOocQpSAAAF",
+                    leadingPlayer: player3,
+                    lastPlayer: player2,
                     cards: [
                         getCopyCard(types.clubs, 6),
                         getCopyCard(types.diamonds, 11),
@@ -393,20 +385,6 @@ describe("play.calculatePointsTeam", ()=>{
             ],
             atout: types.clubs
         })
-    
-        let teamA = new Team({
-            players: [
-                new Player({id: "x4LiglF-N7CyE88YAAAE"}),
-                new Player({id: "xe0limtopblzSBglAAAG"})
-            ]
-        });
-        
-        let teamB = new Team({
-            players: [
-                new Player({id: "Gl_ZFaeHllOocQpSAAAF"}),
-                new Player({id: "JqCMSBFi-tITqBzxAAAH"})
-            ]
-        });
     
         const resultA = play.calculatePointsTeam(teamA);
         const resultB = play.calculatePointsTeam(teamB);

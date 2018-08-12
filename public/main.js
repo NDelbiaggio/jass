@@ -1,5 +1,5 @@
 $(function () {
-    var $playerUsername = $('.playerUsername');
+    var $playerUsername = $('.username');
     //var socket = io.connect('http://localhost:3400');
     var socket = io.connect('https://play-jass.herokuapp.com/');
         
@@ -9,13 +9,16 @@ $(function () {
         cards: []
     }
     var atout;
+    let username;
 
     /*Connexion to server */
-    socket.emit('add player', `Player ${(Math.random() * 10) + 1}`);
+    socket.emit('add player', `Player ${Math.trunc(Math.random() * (100 - 1) + 1)}`);
     
     /*Display username */
     socket.on('login', (player)=>{
-        $playerUsername.text(player.playerName);        
+        username = player.playerName;
+        console.log(username)
+        $playerUsername.text(username);        
     });
 
     /* A player joined - display it in the list */
@@ -24,6 +27,18 @@ $(function () {
         for (let i = 0; i < players.length; i++) {
            $(`.player-${i+1}`).text(`${i+1}) ${players[i].name}`);
         }
+
+        let ind = players.findIndex(p =>p.name == username);
+        for (let i = 0; i < players.length; i++) {
+            let diff = ind -i;            
+            if(diff == 2 || diff == -2){
+                $('.pl-top-name').text(players[i].name);
+            }else if(diff == 1 || diff == -3){
+                $('.pl-right-name').text(players[i].name);
+            }else if(diff == -1 || diff == 3){
+                $('.pl-left-name').text(players[i].name);
+            }            
+        }        
     });
 
     /* Receive cards and display them */
@@ -53,7 +68,7 @@ $(function () {
             setTimeout(() => {
                 $('.card-pile > img').attr("src","");
                 $('.card-pile > img').attr("alt","");
-            }, 400);
+            }, 600);
             plie.cards = [];
             highestCardIndex = 0;
         }
@@ -128,6 +143,7 @@ $(function () {
     //     $('.atoutSelector').css("display", "none");
     // });    
     doubleClick(".atoutSelector > img",function(self){
+        console.log("You have to choose atout")
         let atout = self.attr("value");
         socket.emit('atout', {atout});
         $('.atoutSelector').css("display", "none");
@@ -136,6 +152,7 @@ $(function () {
     //Receives the atout that has been chosen
     socket.on('atout chosen', (res)=>{
         atout = res.atout;
+        $('.atout').attr("src", `./images/${atout}.png`)
         $('.message').text(`Atout is : ${res.atout}`);
     });
 
