@@ -13,7 +13,7 @@ exports.connection = function(server){
             //console.log("disconnect, reason: " + reason);
             
             if(socket.addedUser){
-                disconnectPlayer(socket.id, game);
+                disconnectPlayer(io, socket.id, game);
             }
         });        
     });    

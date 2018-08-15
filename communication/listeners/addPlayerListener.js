@@ -1,8 +1,8 @@
 const registerListeners = require('./registerListeners');
 const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
 const notifyPlayerJoined = require('../notifiers/notifyPlayerJoined');
+const {notifyPlayerLeft} = require('../notifiers/notifyPlayerLeft');
 const {connectPlayerToGame} = require('../connectPlayerToGame');
-
 const {distributeCards} = require('../rules/cardsDistribution');
 
 const {Player} = require('../../models/player');
@@ -37,14 +37,20 @@ module.exports.addPlayerListener = function(io, socket, game){
     });
 }
 
-module.exports.disconnectPlayer = function disconnectPlayer(playerId, game){   
+
+/**
+ * Remove the id (socket id) and the name of the given player to the player object. The cards of the player stay untouched. 
+ * @param {*} playerId socket id
+ * @param {*} game 
+ */
+exports.disconnectPlayer = function disconnectPlayer(io ,playerId, game){   
     console.log("disconnecting: socket.id: ", playerId);
-    const player = game.players.find((p)=> p.id == playerId);
+    const player = game.getPlayerFromId(playerId);
+    notifyPlayerLeft(io, player.name);
     player.id = "";
     player.name = "";
 
     game.status = 0;
-    
-    //notifyPlayerJoined();
 
+    
 }

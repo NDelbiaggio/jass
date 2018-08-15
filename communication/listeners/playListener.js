@@ -20,7 +20,7 @@ module.exports = function(io, socket, players, play, game){
         
         let plie = play.getCurrentPlie();           
         let currentPlayer = findCurrentPlayer(plie, play, players);     
-        let requestPlayer = game.getPlayerFrom_id(socket.id);
+        let requestPlayer = game.getPlayerFromId(socket.id);
 
         //Check if the correct player played
         if(requestPlayer._id != currentPlayer._id) {
