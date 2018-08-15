@@ -5,9 +5,16 @@ const eventName = "choose atout";
 
 function notifyToChooseAtout (io, players, play){
     const playerAtout = getPlayerToChooseAtout(players, play);
-    io.to(playerAtout.id).emit(eventName);
+    console.log("The player that has to choose atout is contacted. Player: ", playerAtout.name);
+    io.emit(eventName, {player: playerAtout.name});
 }
 
+/**
+ * Return the player that has to choose atout before chibrer
+ * @param {*} players 
+ * @param {*} play 
+ * @returns {Player} player that has to choose atout before chibrer
+ */
 function getPlayerToChooseAtout(players, play){
     const indPlayer = getPlayerIndToChooseAtout(players, play);
     return players[indPlayer];

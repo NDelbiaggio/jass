@@ -1,10 +1,9 @@
 const {notifyPlayerToPlay, notifyNextPlayerToPlay} = require('../notifiers/notifyPlayerToPlay');
 const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
 const notifyPlayPoints = require('../notifiers/notifyPlayPoints');
+const {notifyActionNotAllowed} = require('../notifiers/notifyError');
 
-const {Play} = require('../../models/play');
-
-const distributeCards = require('../rules/cardsDistribution');
+const {distributeCards} = require('../rules/cardsDistribution');
 const {isCardPlayable} = require('../rules/cardPlayable');
 const {findCurrentPlayer} = require('../rules/findCurrentPlayer');
 const {printPlay} = require('../../developmentTools/recordGame');
@@ -12,13 +11,16 @@ const {printPlay} = require('../../developmentTools/recordGame');
 const cardsPerPlie = 4;
 const eventName = "play";
 
-module.exports = function(io, socket, players, play, teamA, teamB){
+module.exports = function(io, socket, players, play, game){
     
-    var playLst = socket.on(eventName, (card) => {
-        let plie = play.getCurrentPlie();   
+    socket.on(eventName, (card) => {
+        if(!play.atout){
+            return notifyActionNotAllowed(socket, "Atout has not been set yet, action denied!")
+        }
         
+        let plie = play.getCurrentPlie();           
         let currentPlayer = findCurrentPlayer(plie, play, players);     
-        let requestPlayer = players.find(player=> player.id == socket.id);
+        let requestPlayer = game.getPlayerFrom_id(socket.id);
 
         //Check if the correct player played
         if(requestPlayer._id != currentPlayer._id) {
@@ -38,7 +40,7 @@ module.exports = function(io, socket, players, play, teamA, teamB){
             //3) check if 4 cards have been played
             if(plieLength == cardsPerPlie){
                 if(plie.number == 9){
-                    calculateAndNotifyPoints(play, teamA, teamB);
+                    calculateAndNotifyPoints(play, game.teamA, game.teamB);
 
                     // printPlay(play, players, ()=>{
                     //     console.log("The play has been saved.");
@@ -52,14 +54,14 @@ module.exports = function(io, socket, players, play, teamA, teamB){
                 }else{
                     play.createNewPlie();
                     let leader = players.find(p=> p._id == plie.leadingPlayer);                 
-                    notifyPlayerToPlay(io, leader.id);
+                    notifyPlayerToPlay(io, leader.name);
                 }
             }else{
                 let currentPlayerInd = players.indexOf(currentPlayer);
                 notifyNextPlayerToPlay(io, players, currentPlayerInd);
             }
         }else {
-            throw new Error('it is not allowed to play this card');
+            return notifyActionNotAllowed(socket, "It is not allowed to play this card")
         }
     });
 

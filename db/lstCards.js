@@ -7,6 +7,11 @@ const types = {
     clubs: 'clubs'
 };
 
+exports.isAtoutValid = function(atout){
+    if(atout == types.diamonds || atout == types.spades || atout == types.hearts || atout == types.clubs) return true;
+    return false;
+}
+
 const imgPath = "https://deckofcardsapi.com/static/img/"
 
 const cards = [

@@ -1,3 +1,10 @@
+/**
+ * Returns the player _id that has to play
+ * @param {Object} plie 
+ * @param {Object} play 
+ * @param {[Players]} players 
+ * @returns {boolean} returns the _id of the player that has to play. 
+ */
 function findCurrentPlayerId(plie, play, players){
     if(plie.cards.length == 0){
         if(plie.number == 1){
@@ -13,6 +20,13 @@ function findCurrentPlayerId(plie, play, players){
     }
 }
 
+/**
+ * Returns the player that has to play
+ * @param {Object} plie 
+ * @param {Object} play 
+ * @param {Object} players 
+ * @returns {Player} the player that has to play
+ */
 function findCurrentPlayer(plie, play, players){
     let playerId = findCurrentPlayerId(plie, play, players);
     return players.find(player => player._id == playerId);

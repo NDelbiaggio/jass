@@ -1,5 +1,5 @@
 
-const eventName = "playPoints";
+const eventName = "scores";
 
 function notifyPlayPoints(io, payload){
     console.log(payload)

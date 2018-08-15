@@ -8,7 +8,7 @@ const playerSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        default: this.id
+        default: "no name"
     },
     cards: {
         type: [cardSchema],

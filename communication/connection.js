@@ -2,21 +2,19 @@ const {addPlayerListener, disconnectPlayer} = require('../communication/listener
 
 const {Game} = require('../models/game');
 
-module.exports = function(server){
-    var io = require('socket.io')(server);
+exports.connection = function(server){
+    io = require('socket.io')(server);
     let game = new Game();
 
     io.on('connection', (socket) => {
         addPlayerListener(io, socket, game);
         
         socket.on('disconnect', (reason) => {
-            console.log("disconnect, reason: " + reason);
+            //console.log("disconnect, reason: " + reason);
             
             if(socket.addedUser){
                 disconnectPlayer(socket.id, game);
-                console.log('I disconnect');
             }
         });        
-    });
-    
+    });    
 }

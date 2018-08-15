@@ -1,6 +1,8 @@
 
-const eventName = "atout chosen";
+const eventName = "atout";
 
-module.exports = function(io, atout){
+function notifyAtout(io, atout){
     io.emit(eventName, {atout});   
 }
+
+exports.notifyAtout = notifyAtout;

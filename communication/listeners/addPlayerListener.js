@@ -1,14 +1,15 @@
 const registerListeners = require('./registerListeners');
 const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
 const notifyPlayerJoined = require('../notifiers/notifyPlayerJoined');
-const distributeCards = require('../rules/cardsDistribution');
+const {connectPlayerToGame} = require('../connectPlayerToGame');
+
+const {distributeCards} = require('../rules/cardsDistribution');
 
 const {Player} = require('../../models/player');
 
 const eventName = 'add player';
 
 module.exports.addPlayerListener = function(io, socket, game){
-    var addedUser = false;
     let players = game.players;
 
     socket.once(eventName, (name) => {
@@ -21,26 +22,17 @@ module.exports.addPlayerListener = function(io, socket, game){
                 }); 
             }
         }else{
-            const placeAvailable = players.find(player => player.id == "");
-            if(!placeAvailable){
+            if(!game.isPlaceAvailable()){
                 socket.emit("game full", {});
                 return console.log('GAME FULL');
             }else{
-                placeAvailable.id = socket.id;
-                placeAvailable.name = name;
-                socket.emit('cards distribution', {cards: placeAvailable.cards});
-                if(!game.play.atout){
-                    notifyToChooseAtout(io, game.players, game.play);
-                }
-                //send him information
+                connectPlayerToGame(io, socket, game, name);
             }
         }
 
-        addedUser = true; 
         socket.addedUser = true;
         socket.emit('login',{playerName: name});
-        notifyPlayerJoined(io, name, players);          
-        
+        notifyPlayerJoined(io, name, players);                  
         registerListeners(io, socket, game);           
     });
 }

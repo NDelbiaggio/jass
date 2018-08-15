@@ -86,7 +86,7 @@ playSchema.methods.getPreviousPlie = function(){
 playSchema.methods.clearPlies = function(){
     this.plies = [];
     this.chibre = "";
-    this.atout;
+    this.atout = "";
 }
 
 const Play = mongoose.model('Play', playSchema);
