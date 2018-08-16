@@ -6,15 +6,13 @@ const {notifyAtout} = require('./notifiers/notifyAtoutChosen');
 const {notifyToChooseAtout} = require('./notifiers/notifyToChoseAtout');
 const {notifyCurrentPlayerToPlay} = require('./notifiers/notifyPlayerToPlay');
 
-exports.connectPlayerToGame = function connectPlayerToGame(io, socket, game, name){
-    let playerEmpty = game.getPlayerEmptySeat();
-    playerEmpty.id = socket.id;
-    playerEmpty.name = name;
+exports.connectPlayerToGame = function connectPlayerToGame(io, socket, game, playerEmpty){
+
     sendCards(io, socket.id, playerEmpty.cards);
     
     if(!game.play.atout){
         if(game.play.chibre){
-            let playerChibre = getChibrePlayer(players, game.play);
+            let playerChibre = getChibrePlayer(game.players, game.play);
             notifyChibre(io, playerChibre.name);
         }else{
             notifyToChooseAtout(io, game.players, game.play);
@@ -22,8 +20,8 @@ exports.connectPlayerToGame = function connectPlayerToGame(io, socket, game, nam
     }
     else{
         let currentPlie = game.play.getCurrentPlie();
-        notifyAtout(socket, game.play.atout);
         socket.emit('plie', {plie: currentPlie});
+        notifyAtout(socket, game.play.atout);
 
         notifyCurrentPlayerToPlay(socket, game.play.getCurrentPlie(), game.play, game.players);
     }

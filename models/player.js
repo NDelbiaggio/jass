@@ -4,11 +4,11 @@ const {cardSchema} = require('./card');
 const playerSchema = new mongoose.Schema({
     id: {
         type: String,
-        default: "Anonymous"
+        default: ""
     },
     name: {
         type: String,
-        default: "no name"
+        default: ""
     },
     cards: {
         type: [cardSchema],

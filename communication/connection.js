@@ -4,7 +4,7 @@ const {Game} = require('../models/game');
 
 exports.connection = function(server){
     io = require('socket.io')(server);
-    let game = new Game();
+    let game = Game.createGame();
 
     io.on('connection', (socket) => {
         addPlayerListener(io, socket, game);
