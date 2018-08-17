@@ -50,7 +50,5 @@ exports.disconnectPlayer = function disconnectPlayer(io ,playerId, game){
     player.id = "";
     player.name = "";
 
-    game.status = 0;
-
-    
+    game.status = 0;   
 }

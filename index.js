@@ -10,7 +10,7 @@ require('./prod')(app);
 connection(server);
 
 app.all('*', (req, res) => {
-    res.status(200).sendFile(__dirname + '/public/dist/jass-front-end/index.html');
+    res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'jass-front-end','index.html'));
 });
 
 const port = process.env.PORT || 3400;
