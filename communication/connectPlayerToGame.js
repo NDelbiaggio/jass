@@ -9,8 +9,9 @@ const {notifyCurrentPlayerToPlay} = require('./notifiers/notifyPlayerToPlay');
 exports.connectPlayerToGame = function connectPlayerToGame(io, socket, game, playerEmpty){
 
     sendCards(io, socket.id, playerEmpty.cards);
-    
-    if(!game.play.atout){
+    console.log(game.play.isAtoutSet())
+    if(game.play.atout == ""){
+        console.log("Atout not set")
         if(game.play.chibre){
             let playerChibre = getChibrePlayer(game.players, game.play);
             notifyChibre(io, playerChibre.name);
@@ -19,11 +20,11 @@ exports.connectPlayerToGame = function connectPlayerToGame(io, socket, game, pla
         }
     }
     else{
-        let currentPlie = game.play.getCurrentPlie();
+        let currentPlie = game.play.getLastPlie();        
         socket.emit('plie', {plie: currentPlie});
         notifyAtout(socket, game.play.atout);
 
-        notifyCurrentPlayerToPlay(socket, game.play.getCurrentPlie(), game.play, game.players);
+        notifyCurrentPlayerToPlay(socket, currentPlie, game.play, game.players);
     }
 }
 

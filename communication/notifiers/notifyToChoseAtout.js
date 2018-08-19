@@ -23,8 +23,9 @@ function getPlayerToChooseAtout(players, play){
 function getPlayerIndToChooseAtout(players, play){
     if(!play.atoutChosenBy){
         // Returns the player who has the d7
-        return players.findIndex(p=> p.cards.find(c => c._id == d7._id));
+        return players.findIndex(p=> p.cards.find(c => c.id == d7.id));
     } else {
+        
         //Determine the next player to choose atout
         let indPlayer = players.findIndex(p => p._id == play.atoutChosenBy);
         let indNxtPlayer = (indPlayer == players.length - 1) ? 0: indPlayer + 1;

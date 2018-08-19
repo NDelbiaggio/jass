@@ -2,6 +2,7 @@ const {notifyPlayerToPlay, notifyNextPlayerToPlay} = require('../notifiers/notif
 const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
 const notifyPlayPoints = require('../notifiers/notifyPlayPoints');
 const {notifyActionNotAllowed} = require('../notifiers/notifyError');
+const {notifyCardPlayed} = require('../notifiers/notifyCardPlayed');
 
 const {distributeCards} = require('../rules/cardsDistribution');
 const {isCardPlayable} = require('../rules/cardPlayable');
@@ -18,12 +19,14 @@ module.exports = function(io, socket, players, play, game){
             return notifyActionNotAllowed(socket, "Atout has not been set yet, action denied!")
         }
         
-        let plie = play.getCurrentPlie();           
-        let currentPlayer = findCurrentPlayer(plie, play, players);     
+        let plie = play.getLastPlie();           
+        let currentPlayer = game.findCurrentPlayer();     
         let requestPlayer = game.getPlayerFromId(socket.id);
 
         //Check if the correct player played
         if(requestPlayer._id != currentPlayer._id) {
+            console.log('currentPlayer: ', currentPlayer)
+            console.log('requestPlayer: ', requestPlayer)
             return console.log(`IT IS NOT YOUR TURN, IT IS ${currentPlayer.id} turn`);            
         };
 
@@ -31,11 +34,14 @@ module.exports = function(io, socket, players, play, game){
 
         if(isAllowedToBePlayed){
             //1) add the card to the plie
-            currentPlayer.playCard(card._id);
-            const plieLength = play.getCurrentPlie().addCardPlayed(play.atout, card, currentPlayer._id);
+            const success = currentPlayer.playCard(card.id);
+            if(!success){
+                throw new Error(`Card not valid ${cardExist}`);
+            }
+            const plieLength = play.getLastPlie().addCardPlayed(card, currentPlayer.name, currentPlayer._id);
             
             //2) notify the others players about the card
-            io.emit('card played', {card});
+            notifyCardPlayed(io, card, currentPlayer.name);
 
             //3) check if 4 cards have been played
             if(plieLength == cardsPerPlie){

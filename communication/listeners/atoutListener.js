@@ -23,10 +23,9 @@ module.exports = function (io, socket, players, play) {
         if(play.chibre){
             expectedPlayer = getChibrePlayer(players, play);
         }
-        const playerMatchId = players.find(p=>p.id == socket.id);
+        const playerMatchId = players.find(p => p.socketId == socket.id);
         if(expectedPlayer._id == playerMatchId._id) {
-            play.atout = atout; 
-            play.atoutChosenBy = player._id
+            play.setAtout(atout, player._id);
             notifyAtout(io, play.atout);
             notifyPlayerToPlay(io, player.name);                    
         }else{
@@ -36,7 +35,7 @@ module.exports = function (io, socket, players, play) {
 
     socket.on('chibre', ()=>{
         const expectedPlayer = getPlayerToChooseAtout(players, play);
-        if(expectedPlayer.id == socket.id){
+        if(expectedPlayer.socketId == socket.id){
             if(play.atout){
                 return notifyActionNotAllowed(socket, "The play is not finished!");
             }

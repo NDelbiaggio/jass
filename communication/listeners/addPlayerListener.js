@@ -13,7 +13,7 @@ const eventName = 'add player';
 module.exports.addPlayerListener = function(io, socket, game){
     let players = game.players;
 
-    socket.once(eventName, (name) => {
+    socket.on(eventName, (name) => {
         if(game.isPlaceAvailable()){
             let player = game.setNewPlayer(socket.id, name);
             if(!game.isPlaceAvailable()){
@@ -27,6 +27,7 @@ module.exports.addPlayerListener = function(io, socket, game){
             }
         }else{
             socket.emit("game full", {});
+            
             return console.log('GAME FULL');
         }
 
@@ -43,12 +44,9 @@ module.exports.addPlayerListener = function(io, socket, game){
  * @param {*} playerId socket id
  * @param {*} game 
  */
-exports.disconnectPlayer = function disconnectPlayer(io ,playerId, game){   
-    console.log("disconnecting: socket.id: ", playerId);
-    const player = game.getPlayerFromId(playerId);
-    notifyPlayerLeft(io, player.name);
-    player.id = "";
-    player.name = "";
-
-    game.status = 0;   
+exports.disconnectPlayer = function disconnectPlayer(io ,socketId, game){   
+    console.log("disconnecting: socket.id: ", socketId);
+    let name = game.getPlayerFromId(socketId).name;
+    game.unsetPlayer(socketId);
+    notifyPlayerLeft(io, name);    
 }

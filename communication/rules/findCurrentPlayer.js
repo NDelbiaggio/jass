@@ -6,7 +6,7 @@
  * @returns {boolean} returns the _id of the player that has to play. 
  */
 function findCurrentPlayerId(plie, play, players){
-    if(plie.cards.length == 0){
+    if(plie.isEmpty()){
         if(plie.number == 1){
             return play.atoutChosenBy;
         }else{

@@ -11,7 +11,7 @@ function distributeCards(io, players, cb){
         let player = players[i];
         player.setHand(hands[i]);
         
-        sendCards(io, player.id, player.cards);                           
+        sendCards(io, player.socketId, player.cards);                           
     }
 
     writePlayersWithHands(players, cb);
