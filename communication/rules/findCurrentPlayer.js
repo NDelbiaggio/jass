@@ -1,20 +1,20 @@
 /**
  * Returns the player _id that has to play
- * @param {Object} plie 
+ * @param {Object} trick 
  * @param {Object} play 
  * @param {[Players]} players 
  * @returns {boolean} returns the _id of the player that has to play. 
  */
-function findCurrentPlayerId(plie, play, players){
-    if(plie.isEmpty()){
-        if(plie.number == 1){
-            return play.atoutChosenBy;
+function findCurrentPlayerId(trick, play, players){
+    if(trick.isEmpty()){
+        if(trick.number == 1){
+            return play.trumpChosenBy;
         }else{
-            let lastPlie = play.getPreviousPlie();
-            return lastPlie.leadingPlayer;
+            let lastTrick = play.getPreviousTrick();
+            return lastTrick.leadingPlayer;
         }
     }else{
-        let lastPlayerInd = players.findIndex((p)=>p._id == plie.lastPlayer);
+        let lastPlayerInd = players.findIndex((p)=>p._id == trick.lastPlayer);
         let nxtInd = (lastPlayerInd == players.length - 1) ? 0: lastPlayerInd + 1;
         return players[nxtInd]._id;
     }
@@ -22,13 +22,13 @@ function findCurrentPlayerId(plie, play, players){
 
 /**
  * Returns the player that has to play
- * @param {Object} plie 
+ * @param {Object} trick 
  * @param {Object} play 
  * @param {Object} players 
  * @returns {Player} the player that has to play
  */
-function findCurrentPlayer(plie, play, players){
-    let playerId = findCurrentPlayerId(plie, play, players);
+function findCurrentPlayer(trick, play, players){
+    let playerId = findCurrentPlayerId(trick, play, players);
     return players.find(player => player._id == playerId);
 }
 

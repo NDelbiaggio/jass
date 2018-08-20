@@ -7,14 +7,14 @@ const types = {
     clubs: 'clubs'
 };
 
-exports.isAtoutValid = function (atout) {
-    if (atout == types.diamonds || atout == types.spades || atout == types.hearts || atout == types.clubs) return true;
+exports.isTrumpValid = function (trump) {
+    if (trump == types.diamonds || trump == types.spades || trump == types.hearts || trump == types.clubs) return true;
     return false;
 }
 
 const imgPath = "https://deckofcardsapi.com/static/img/"
 
-const cards = [
+const deck = [
     new Card(types.diamonds, 'six', 6, 1, 1, 0, 0, `${imgPath}6D.png`),
     new Card(types.diamonds, 'seven', 7, 2, 2, 0, 0, `${imgPath}7D.png`),
     new Card(types.diamonds, 'eight', 8, 3, 3, 0, 0, `${imgPath}8D.png`),
@@ -56,12 +56,12 @@ const cards = [
     new Card(types.spades, 'ace', 14, 7, 9 + 27, 11, 11, `${imgPath}AS.png`),
 ];
 
-exports.getCopyCards = function getCopyCards() {
-    return JSON.parse(JSON.stringify(cards));
+exports.getCopyDeck = function getCopyDeck() {
+    return JSON.parse(JSON.stringify(deck));
 }
 
 exports.getCopyCard = function getCopyCard(type, power) {
-    const card = cards.find((c) => c.type == type && c.power == power);
+    const card = deck.find((c) => c.type == type && c.power == power);
     return JSON.parse(JSON.stringify(card));
 }
 

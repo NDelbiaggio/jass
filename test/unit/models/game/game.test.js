@@ -1,4 +1,4 @@
-const {types, getCopyCard } = require('../../../../db/lstCards');
+const {types, getCopyCard } = require('../../../../db/deck');
 const {Game} = require('../../../../models/game');
 
 describe('Object Game', ()=>{

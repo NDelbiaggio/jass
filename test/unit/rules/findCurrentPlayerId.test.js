@@ -1,8 +1,8 @@
 const {Player} = require('../../../models/player');
 const {Play} = require('../../../models/play');
-const {Plie} = require('../../../models/plie');
+const {Trick} = require('../../../models/trick');
 const {Game} = require('../../../models/game');
-const {types, getCopyCard} = require('../../../db/lstCards');
+const {types, getCopyCard} = require('../../../db/deck');
 const mongoose = require('mongoose');
 
 const {findCurrentPlayer} = require('../../../communication/rules/findCurrentPlayer');
@@ -10,30 +10,30 @@ const {findCurrentPlayer} = require('../../../communication/rules/findCurrentPla
 
 describe('findCurrentPlayerId', ()=>{
     let game;
-    let atout = types.diamonds;
+    let trump = types.diamonds;
 
     beforeEach(()=>{
         game = new Game();
     });
 
-    it("Should return the id of the player who chose atout, when it' is the beginning of the play.", ()=>{
-        let playerAtout = game.players[2];
+    it("Should return the id of the player who chose trump, when it' is the beginning of the play.", ()=>{
+        let playerTrump = game.players[2];
         
-        game.play.setAtout(atout, playerAtout._id);
-        game.play.createNewPlie();
+        game.play.setTrump(trump, playerTrump._id);
+        game.play.createNewTrick();
         
         let result = game.findCurrentPlayer();
 
-        expect(result).toBe(playerAtout);
+        expect(result).toBe(playerTrump);
     });
 
-    it("Should return the leadingPlayer of the previous plie, it's not the first Plie and no cards have been played", ()=>{
-        let playerAtout = game.players[2];
+    it("Should return the leadingPlayer of the previous trick, it's not the first Trick and no cards have been played", ()=>{
+        let playerTrump = game.players[2];
         let leadingPlayer = game.players[3];
-        game.play.setAtout(atout, playerAtout._id);        
-        let plie = new Plie(1,atout, undefined, undefined, leadingPlayer._id, undefined);
-        game.play.addPlie(plie);
-        game.play.createNewPlie();
+        game.play.setTrump(trump, playerTrump._id);        
+        let trick = new Trick(1,trump, undefined, undefined, leadingPlayer._id, undefined);
+        game.play.addTrick(trick);
+        game.play.createNewTrick();
 
         let result = game.findCurrentPlayer();
 
@@ -41,16 +41,16 @@ describe('findCurrentPlayerId', ()=>{
     });
 
     it("Should return the id of the next player when there is already at least one card played", ()=> {
-        let playerAtout = game.players[2];
+        let playerTrump = game.players[2];
         let leadingPlayer = game.players[3];
         let lastPlayer = game.players[2];
 
-        game.play.setAtout(atout, playerAtout._id);
+        game.play.setTrump(trump, playerTrump._id);
         
-        let plie = new Plie(1, atout, undefined, undefined, leadingPlayer._id, undefined);
-        let card = getCopyCard(atout, 8);
-        plie.addCardPlayed(card, '', lastPlayer._id);
-        game.play.addPlie(plie);
+        let trick = new Trick(1, trump, undefined, undefined, leadingPlayer._id, undefined);
+        let card = getCopyCard(trump, 8);
+        trick.addCardPlayed(card, '', lastPlayer._id);
+        game.play.addTrick(trick);
 
         let result = game.findCurrentPlayer();
 
@@ -58,16 +58,16 @@ describe('findCurrentPlayerId', ()=>{
     });
 
     it("Should return the first player if the last player played previously", ()=> {
-        let playerAtout = game.players[2];
+        let playerTrump = game.players[2];
         let leadingPlayer = game.players[3];
         let lastPlayer = game.players[3];
 
-        game.play.setAtout(atout, playerAtout._id);
+        game.play.setTrump(trump, playerTrump._id);
         
-        let plie = new Plie(1, atout, undefined, undefined, leadingPlayer._id, undefined);
-        let card = getCopyCard(atout, 8);
-        plie.addCardPlayed( card, '', lastPlayer._id);
-        game.play.addPlie(plie);                
+        let trick = new Trick(1, trump, undefined, undefined, leadingPlayer._id, undefined);
+        let card = getCopyCard(trump, 8);
+        trick.addCardPlayed( card, '', lastPlayer._id);
+        game.play.addTrick(trick);                
 
         let result = game.findCurrentPlayer();
 

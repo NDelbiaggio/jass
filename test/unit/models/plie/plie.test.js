@@ -1,8 +1,8 @@
-const {types, getCopyCard} = require('../../../../db/lstCards');
-const {Plie} = require('../../../../models/plie');
+const {types, getCopyCard} = require('../../../../db/deck');
+const {Trick} = require('../../../../models/trick');
 const {Action} = require('../../../../models/action');
 
-describe('Object Plie', ()=>{
+describe('Object Trick', ()=>{
     let actions;
 
     beforeEach(()=>{
@@ -14,26 +14,26 @@ describe('Object Plie', ()=>{
     })
 
     it('should return the first card when getFirstCards is called', ()=>{
-        let plie = new Plie(1, types.diamonds, actions);
-        const result = plie.getFirstCard();
+        let trick = new Trick(1, types.diamonds, actions);
+        const result = trick.getFirstCard();
         expect(result).toBe(actions[0].card);
     });
 
     it('should return the leading card', ()=>{
-        let plie = new Plie(1,types.diamonds, actions, 2);
-        const result = plie.getLeadingCard();
+        let trick = new Trick(1,types.diamonds, actions, 2);
+        const result = trick.getLeadingCard();
         expect(result).toBe(actions[2].card); 
     });
 
     it('should return true if there is not card and isEmpty is called', ()=>{
         this.actions = [];
-        let plie = new Plie(1,types.diamonds,);
-        const result = plie.isEmpty();
+        let trick = new Trick(1,types.diamonds,);
+        const result = trick.isEmpty();
         expect(result).toBeTruthy();
     })
-    it('should return false if there is at least one card in the plie and isEmpty is called', ()=>{
-        let plie = new Plie(1,types.diamonds, actions);
-        const result = plie.isEmpty();
+    it('should return false if there is at least one card in the trick and isEmpty is called', ()=>{
+        let trick = new Trick(1,types.diamonds, actions);
+        const result = trick.isEmpty();
         expect(result).toBeFalsy();
     })
 })

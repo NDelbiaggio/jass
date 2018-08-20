@@ -1,4 +1,4 @@
-const {types} = require('../../db/lstCards');
+const {types} = require('../../db/deck');
 const {typesAnnounces} = require('../../db/announcesPoints');
 
 function findSequences(cards){

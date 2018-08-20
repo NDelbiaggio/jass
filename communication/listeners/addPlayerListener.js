@@ -1,6 +1,6 @@
 const registerListeners = require('./registerListeners');
 
-const {notifyToChooseAtout} = require('../notifiers/notifyToChoseAtout');
+const {notifyToChooseTrump} = require('../notifiers/notifyToChoseTrump');
 const notifyPlayerJoined = require('../notifiers/notifyPlayerJoined');
 const {notifyPlayerLeft} = require('../notifiers/notifyPlayerLeft');
 
@@ -21,7 +21,7 @@ module.exports.addPlayerListener = function(io, socket, game){
                     connectPlayerToGame(io, socket, game, player);
                 } else{
                     distributeCards(io, players, ()=>{
-                        notifyToChooseAtout(io, game.players, game.play);
+                        notifyToChooseTrump(io, game.players, game.play);
                     }); 
                 }                
             }
@@ -31,6 +31,7 @@ module.exports.addPlayerListener = function(io, socket, game){
             return console.log('GAME FULL');
         }
 
+        console.log("addplayer - emit login, notifyPlayerJoined - register listeners");
         socket.addedUser = true;
         socket.emit('login',{playerName: name});
         notifyPlayerJoined(io, name, players);                  

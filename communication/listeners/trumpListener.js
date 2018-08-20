@@ -1,23 +1,23 @@
-const {notifyAtout} = require('../notifiers/notifyAtoutChosen');
+const {notifyTrump} = require('../notifiers/notifyTrumpChosen');
 const {notifyPlayerToPlay} = require('../notifiers/notifyPlayerToPlay');
-const {getPlayerToChooseAtout, getChibrePlayer} = require('../notifiers/notifyToChoseAtout');
+const {getPlayerToChooseTrump, getChibrePlayer} = require('../notifiers/notifyToChoseTrump');
 const {notifyActionNotAllowed} =  require('../notifiers/notifyError');
 const {notifyChibre} = require('../notifiers/notifyChibre');
-const {isAtoutValid} = require('../../db/lstCards');
+const {isTrumpValid} = require('../../db/deck');
 
-const atoutEvent = 'atout';
+const trumpEvent = 'trump';
 
 module.exports = function (io, socket, players, play) {
-    socket.on(atoutEvent, (atout)=>{
-        console.log("Atout is : ",atout)
-        if(play.atout){
+    socket.on(trumpEvent, (trump)=>{
+        console.log("Trump is : ",trump)
+        if(play.trump){
             return notifyActionNotAllowed(socket, "The play is not finished!");
         }
-        if(!atout || !isAtoutValid(atout)){
-            return notifyActionNotAllowed(socket, "Atout is not valid");
+        if(!trump || !isTrumpValid(trump)){
+            return notifyActionNotAllowed(socket, "Trump is not valid");
         }
 
-        const player = getPlayerToChooseAtout(players, play);
+        const player = getPlayerToChooseTrump(players, play);
         let expectedPlayer = player;
 
         if(play.chibre){
@@ -25,18 +25,18 @@ module.exports = function (io, socket, players, play) {
         }
         const playerMatchId = players.find(p => p.socketId == socket.id);
         if(expectedPlayer._id == playerMatchId._id) {
-            play.setAtout(atout, player._id);
-            notifyAtout(io, play.atout);
+            play.setTrump(trump, player._id);
+            notifyTrump(io, play.trump);
             notifyPlayerToPlay(io, player.name);                    
         }else{
-            notifyActionNotAllowed(socket, "This is not your turn to choose atout");
+            notifyActionNotAllowed(socket, "This is not your turn to choose trump");
         }
     }); 
 
     socket.on('chibre', ()=>{
-        const expectedPlayer = getPlayerToChooseAtout(players, play);
+        const expectedPlayer = getPlayerToChooseTrump(players, play);
         if(expectedPlayer.socketId == socket.id){
-            if(play.atout){
+            if(play.trump){
                 return notifyActionNotAllowed(socket, "The play is not finished!");
             }
             if(!play.chibre){
@@ -51,8 +51,8 @@ module.exports = function (io, socket, players, play) {
                 return notifyActionNotAllowed(socket, "You have already chibre.");
             }
         }else{
-            console.log("IT IS NOT YOUR TURN TO CHOOSE ATOUT, SO YOU CAN'T CHIBRE!")
-            return notifyActionNotAllowed(socket, "IT IS NOT YOUR TURN TO CHOOSE ATOUT, SO YOU CAN'T CHIBRE!");
+            console.log("IT IS NOT YOUR TURN TO CHOOSE TRUMP, SO YOU CAN'T CHIBRE!")
+            return notifyActionNotAllowed(socket, "IT IS NOT YOUR TURN TO CHOOSE TRUMP, SO YOU CAN'T CHIBRE!");
         }
     });
 

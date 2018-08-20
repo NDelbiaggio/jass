@@ -14,12 +14,12 @@ function notifyPlayerToPlay(io, playerName){
 /**
  * Emit an event 'turn' to the player that has to play.
  * @param {*} io 
- * @param {*} plie 
+ * @param {*} trick 
  * @param {*} play 
  * @param {*} players 
  */
-function notifyCurrentPlayerToPlay(io, plie, play, players ){
-    let player = findCurrentPlayer(plie, play, players);
+function notifyCurrentPlayerToPlay(io, trick, play, players ){
+    let player = findCurrentPlayer(trick, play, players);
     notifyPlayerToPlay(io, player.name);
 }
 

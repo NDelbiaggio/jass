@@ -1,132 +1,36 @@
-// const mongoose = require('mongoose');
-// const {plieSchema, Plie} = require('./plie');
+const {Trick} = require('./trick');
+const {isTrumpValid} = require('../db/deck');
 
-// const nbPlies = 9;
-// const allCardsBonus = 100;
-
-// const playSchema = new mongoose.Schema({
-//     plies: {
-//         type: [plieSchema],
-//         default: []
-//     },
-//     atout: String,    
-//     atoutChosenBy: String,
-//     chibre: String
-// });
-
-// /**
-//  * Returns the points of the play
-//  * @param {[Object]} plies
-//  * @returns {number} points
-//  */
-// playSchema.methods.calculatePlayPoints = function(plies=this.plies){
-//     let points = 0;
-//     plies.forEach(plie => {
-//         points += plie.calculatePliePoints(this.atout);
-//     });
-    
-//     return (plies.length == nbPlies)? points + allCardsBonus: points;
-// };
-
-// /**
-//  * Returns the number of points made by the received team
-//  * @param {Object} team 
-//  * @returns {number} points
-//  */
-// playSchema.methods.calculatePointsTeam = function(team){
-//     let plieTeam = [];
-//     this.plies.forEach(plie =>{
-//        let indPlayer = team.players.findIndex(p => p._id == plie.leadingPlayer); 
-//         if(indPlayer != -1){
-//             plieTeam.push(plie);
-//         } 
-//     });
-
-//     return this.calculatePlayPoints(plieTeam);
-// }
-
-// /**
-//  * Add a plie to the plies
-//  * @param {Object} plie 
-//  */
-// playSchema.methods.addPlie = function(plie){
-//     plies.push(plie);
-// };
-
-// /**
-//  * Create a new plie with the number following the previous ones
-//  * @returns {Object} plie
-//  */
-// playSchema.methods.createNewPlie = function(){
-//     if(this.plies.length == 9) return;
-//     const plieNumber = this.plies.length == 0? 1: this.plies[this.plies.length-1].number + 1;
-//     let plie = new Plie({number: plieNumber});
-//     this.plies.push(plie);
-//     return plie;
-// }
-
-// /**
-//  * Returns the last plie
-//  * @returns {Object} plie
-//  */
-// playSchema.methods.getCurrentPlie = function(){
-//     if(this.plies.length == 0) return this.createNewPlie();
-//     return this.plies[this.plies.length-1];
-// }
-
-// /**
-//  * Returns the previous plie, if there is only one plie the first one is returned
-//  * @returns {Object} plie
-//  */
-// playSchema.methods.getPreviousPlie = function(){
-//     const prevPlieInd = this.plies.length <= 1? 0: this.plies.length -2;
-//     return this.plies[prevPlieInd];
-// }
-
-// playSchema.methods.clearPlies = function(){
-//     this.plies = [];
-//     this.chibre = "";
-//     this.atout = "";
-// }
-
-// const Play = mongoose.model('Play', playSchema);
-
-// exports.Play = Play;
-// exports.playSchema = playSchema;
-
-const {Plie} = require('./plie');
-const {isAtoutValid} = require('../db/lstCards');
-
-const nbPlies = 9;
-const allCardsBonus = 100;
+const nbTricks = 9;
+const matchBonus = 100;
 
 exports.Play = class Play {
 
-    constructor(plies = [], atout ="", atoutChosenBy="", chibre="" ){
-        this.plies = plies;
-        this.atout = atout;
-        this.atoutChosenBy = atoutChosenBy;
+    constructor(tricks = [], trump ="", trumpChosenBy="", chibre="" ){
+        this.tricks = tricks;
+        this.trump = trump;
+        this.trumpChosenBy = trumpChosenBy;
         this.chibre = chibre;
-        if(!isAtoutValid(atout) && atout != '') throw new Error('Atout invalid');
+        if(!isTrumpValid(trump) && trump != '') throw new Error('Trump invalid');
     }
 
-    setAtout(atout, atoutChosenBy){
-        this.atout = atout;
-        this.atoutChosenBy = atoutChosenBy;
+    setTrump(trump, trumpChosenBy){
+        this.trump = trump;
+        this.trumpChosenBy = trumpChosenBy;
     }
 
     /**
      * Returns the points of the play
-     * @param {[Object]} plies
+     * @param {[Object]} tricks
      * @returns {number} points
      */
-    calculatePlayPoints(plies=this.plies){
+    calculatePlayPoints(tricks=this.tricks){
         let points = 0;
-        plies.forEach(plie => {
-            points += plie.calculatePliePoints(this.atout);
+        tricks.forEach(trick => {
+            points += trick.calculateTrickPoints(this.trump);
         });
 
-        return (plies.length == nbPlies)? points + allCardsBonus: points;
+        return (tricks.length == nbTricks)? points + matchBonus: points;
     };
 
     /**
@@ -135,64 +39,64 @@ exports.Play = class Play {
      * @returns {number} points
      */
     calculatePointsTeam(team){
-        let plieTeam = [];
-        this.plies.forEach(plie =>{
-            let indPlayer = team.players.findIndex(p => p._id == plie.leadingPlayer); 
+        let trickTeam = [];
+        this.tricks.forEach(trick =>{
+            let indPlayer = team.players.findIndex(p => p._id == trick.leadingPlayer); 
             
             if(indPlayer != -1){
-                plieTeam.push(plie);
+                trickTeam.push(trick);
             } 
         });
 
-        return this.calculatePlayPoints(plieTeam);
+        return this.calculatePlayPoints(trickTeam);
     }
 
     /**
-     * Add a plie to the plies
-     * @param {Object} plie 
+     * Add a trick to the tricks
+     * @param {Object} trick 
      */
-    addPlie(plie){
-        this.plies.push(plie);
+    addTrick(trick){
+        this.tricks.push(trick);
     };
 
     /**
-     * Create a new plie with the number following the previous ones
-     * @returns {Object} plie
+     * Create a new trick with the number following the previous ones
+     * @returns {Object} trick
      */
-    createNewPlie(){
-        if(this.plies.length == 9) return;
-        const plieNumber = this.plies.length == 0? 1: this.getLastPlie().number + 1;
-        let plie = new Plie(plieNumber, this.atout);
-        this.plies.push(plie);
-        return plie;
+    createNewTrick(){
+        if(this.tricks.length == 9) return;
+        const trickNumber = this.tricks.length == 0? 1: this.getLastTrick().number + 1;
+        let trick = new Trick(trickNumber, this.trump);
+        this.tricks.push(trick);
+        return trick;
     }
 
     /**
-     * Returns the last plie
-     * @returns {Object} plie
+     * Returns the last trick
+     * @returns {Object} trick
      */
-    getLastPlie(){
-        if(this.plies.length == 0) return this.createNewPlie();
-        return this.plies[this.plies.length - 1];
+    getLastTrick(){
+        if(this.tricks.length == 0) return this.createNewTrick();
+        return this.tricks[this.tricks.length - 1];
     }
 
     /**
-     * Returns the previous plie, if there is only one plie the first one is returned
-     * @returns {Object} plie
+     * Returns the previous trick, if there is only one trick the first one is returned
+     * @returns {Object} trick
      */
-    getPreviousPlie(){
-        const prevPlieInd = this.plies.length <= 1? 0: this.plies.length -2;
-        return this.plies[prevPlieInd];
+    getPreviousTrick(){
+        const prevTrickInd = this.tricks.length <= 1? 0: this.tricks.length -2;
+        return this.tricks[prevTrickInd];
     }
 
-    clearPlies(){
-        this.plies = [];
+    clearTricks(){
+        this.tricks = [];
         this.chibre = "";
-        this.atout = "";
+        this.trump = "";
     }
 
-    isAtoutSet(){
-        return this.atout != "";
+    isTrumpSet(){
+        return this.trump != "";
     }
 
 

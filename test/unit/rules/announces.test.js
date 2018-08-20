@@ -1,5 +1,5 @@
 
-const {getCopyCard, types} = require('../../../db/lstCards');
+const {getCopyCard, types} = require('../../../db/deck');
 const {typesAnnounces} = require('../../../db/announcesPoints');
 const {findSequences} = require('../../../communication/announces/findSequences');
 const {find4Jacks,find4Nines,findFour10QKA} = require('../../../communication/announces/findSquares');

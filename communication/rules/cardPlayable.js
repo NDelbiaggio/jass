@@ -1,41 +1,39 @@
-exports.isCardPlayable = function isCardPlayable(card, atout, plie, cardsInHand) {
-    let cards = plie.getCards();
-    
+exports.isCardPlayable = function isCardPlayable(card, trump, trick, cardsInHand) {
+    let cards = trick.getCards();
     //The player plays the first card
     if (cards.length == 0) {
         return true;
     }
 
-    const firstCardPlayed = plie.getFirstCard();
-    const leadingCard = plie.getLeadingCard();
+    const firstCardPlayed = trick.getFirstCard();
+    const leadingCard = trick.getLeadingCard();
 
     //The player plays 
     if (card.type == firstCardPlayed.type) {
         return true;
     }
-
-    //First card played is not atout
-    if (firstCardPlayed.type != atout) {
+    //First card played is not trump
+    if (firstCardPlayed.type != trump) {
         //want to cut
-        if (card.type == atout) {
+        if (card.type == trump) {
             //has not been cut
-            if (leadingCard.type != atout) {
+            if (leadingCard.type != trump) {
                 return true;
             } else { //has been cut
                 //higher cut
-                if (card.atoutPower > leadingCard.atoutPower) {
+                if (card.trumpPower > leadingCard.trumpPower) {
                     return true;
                 } else {//under cut
                     const result = cardsInHand.find((c) => {
-                        return c.type != atout
+                        return c.type != trump
                     });
-                    //hand has sth else than atout
-                    if (result) return false //throw new Error('Not allowed to under cut');
-                    //has only atout
+                    //hand has sth else than trump
+                    if (result) return false 
+                    //has only trump
                     const res = cardsInHand.find((c) => {
-                        return c.type == atout && c.atoutPower > leadingCard.atoutPower && c.atoutPower != 9;
+                        return c.type == trump && c.trumpPower > leadingCard.trumpPower && c.trumpPower != 9;
                     });
-                    if (res) return false; //throw new Error('Not allowed to under cut if you pocess an atout higher');
+                    if (res) return false; 
                     return true;
                 }
             }
@@ -48,7 +46,7 @@ exports.isCardPlayable = function isCardPlayable(card, atout, plie, cardsInHand)
         }
     } else {
         let result = cardsInHand.find(c => {
-            return c.type == firstCardPlayed.type && c.atoutPower != 9;
+            return c.type == firstCardPlayed.type && c.trumpPower != 9;
         });
         if (result) return false;
         return true;

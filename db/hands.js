@@ -1,4 +1,4 @@
-const {getCopyCards} = require('../db/lstCards');
+const {getCopyDeck} = require('../db/deck');
 const {getRndInteger} = require('../tools');
 
 let lstCards;
@@ -8,7 +8,7 @@ const nbCardsInHand = 9;
 let hands;
 
 exports.generateHands = function (){
-    lstCards = getCopyCards();
+    lstCards = getCopyDeck();
     hands = [];
     for (let i = 0; i < nbPlayers; i++) {
         hands.push(getHand());     

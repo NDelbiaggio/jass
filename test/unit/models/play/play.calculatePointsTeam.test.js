@@ -1,6 +1,6 @@
-const {types, getCopyCard} = require('../../../../db/lstCards');
+const {types, getCopyCard} = require('../../../../db/deck');
 const {Play} = require('../../../../models/play');
-const {Plie} = require('../../../../models/plie');
+const {Trick} = require('../../../../models/trick');
 const {Team} = require('../../../../models/team');
 const {Action} = require('../../../../models/action');
 const {Player} = require('../../../../models/player');
@@ -15,22 +15,22 @@ describe("play.calculatePointsTeam", ()=>{
     let teamA = new Team([player1, player3]);
     let teamB = new Team([player2, player4]);
 
-    let atout;
+    let trump;
     beforeEach(()=>{
-        atout = types.diamonds;
+        trump = types.diamonds;
     })
 
 
-    it('should return 257 points for one team and 0 for the other one when a team gets all the plies', ()=>{
-        let play = new Play([], atout);
+    it('should return 257 points for one team and 0 for the other one when a team gets all the tricks', ()=>{
+        let play = new Play([], trump);
         let actions = [
             new Action('', getCopyCard(types.diamonds, 11)),
             new Action('',getCopyCard(types.diamonds, 6)),
             new Action('',getCopyCard(types.diamonds, 14)),
             new Action('',getCopyCard(types.spades, 13))    
         ];
-        let plie = new Plie(1, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        let trick = new Trick(1, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 9)),
@@ -38,8 +38,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.spades, 7)),
             new Action('',getCopyCard(types.spades, 11))     
         ]
-        plie = new Plie(2, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(2, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.hearts, 13)),
@@ -47,8 +47,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 10)),
             new Action('',getCopyCard(types.hearts, 6)), 
         ]
-        plie = new Plie(3, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(3, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 7)),
@@ -56,8 +56,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 6)),
             new Action('',getCopyCard(types.clubs, 12)),
         ]
-        plie = new Plie(4, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(4, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 8)),
@@ -65,8 +65,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 7)),
             new Action('',getCopyCard(types.clubs, 10)),  
         ]
-        plie = new Plie(5, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(5, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 10)),
@@ -74,8 +74,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 8)),
             new Action('',getCopyCard(types.hearts, 7)),       
         ]
-        plie = new Plie(6, atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(6, trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 13)),
@@ -83,8 +83,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 12)),
             new Action('',getCopyCard(types.hearts, 8)),      
         ]
-        plie = new Plie(7,atout, actions, 0, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(7,trump, actions, 0, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.spades, 10)),
@@ -92,8 +92,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 11)),
             new Action('',getCopyCard(types.spades, 9)),        
         ]
-        plie = new Plie(8, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(8, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
 
         actions = [
             new Action('',getCopyCard(types.clubs, 9)),
@@ -101,8 +101,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 11)),
             new Action('',getCopyCard(types.spades, 12)),    
         ]
-        plie = new Plie(9, atout, actions, 0, player1.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(9, trump, actions, 0, player1.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
 
         const resultA = play.calculatePointsTeam(teamA);
         const resultB = play.calculatePointsTeam(teamB);
@@ -111,7 +111,7 @@ describe("play.calculatePointsTeam", ()=>{
         expect(resultB).toBe(0);
     });
 
-    it('should the sum of the two teams points has to be equal to 157 if both teams have at least one plie', ()=>{
+    it('should the sum of the two teams points has to be equal to 157 if both teams have at least one trick', ()=>{
         let play = new Play([], types.diamonds);
         let actions = [
             new Action('',getCopyCard(types.diamonds, 11)),
@@ -119,8 +119,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.diamonds, 12)),
             new Action('',getCopyCard(types.diamonds, 8)),
         ];
-        let plie = new Plie(1, atout, actions, 0, player1.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        let trick = new Trick(1, trump, actions, 0, player1.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 7)),
@@ -128,8 +128,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.diamonds, 13)),
             new Action('',getCopyCard(types.hearts, 6)),
         ]
-        plie = new Plie(2, atout, actions, 2, player3.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(2, trump, actions, 2, player3.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.diamonds, 9)),
@@ -137,8 +137,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.diamonds, 10)),
             new Action('',getCopyCard(types.hearts, 7)),
         ]
-        plie = new Plie(3, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(3, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 6)),
@@ -146,8 +146,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 13)),
             new Action('',getCopyCard(types.clubs, 14)),
         ]
-        plie = new Plie(4, atout, actions, 3, player2.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(4, trump, actions, 3, player2.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 7)),
@@ -155,8 +155,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.spades, 12)),
             new Action('',getCopyCard(types.hearts, 8)),
         ]
-        plie = new Plie(5, atout, actions, 1, player3.getPlayerId(), player1.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(5, trump, actions, 1, player3.getPlayerId(), player1.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 10)),
@@ -164,8 +164,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.spades, 9)),
             new Action('',getCopyCard(types.clubs, 9)),
         ]
-        plie = new Plie(6, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(6, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 8)),
@@ -173,8 +173,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 9)),
             new Action('',getCopyCard(types.hearts, 10)),
         ]
-        plie = new Plie(7, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(7, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.spades, 10)),
@@ -182,8 +182,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 11)),
             new Action('',getCopyCard(types.spades, 8)),
         ]
-        plie = new Plie(8, atout, actions, 1, player4.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(8, trump, actions, 1, player4.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
 
         actions = [
             new Action('',getCopyCard(types.hearts, 14)),
@@ -191,8 +191,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.spades, 11)),
             new Action('',getCopyCard(types.hearts, 13)),
         ]
-        plie = new Plie(9, atout, actions, 1, player1.getPlayerId(), player3.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(9, trump, actions, 1, player1.getPlayerId(), player3.getPlayerId());
+        play.addTrick(trick);
         
         const resultA = play.calculatePointsTeam(teamA);
         const resultB = play.calculatePointsTeam(teamB);
@@ -202,17 +202,17 @@ describe("play.calculatePointsTeam", ()=>{
 
     });
 
-    it('should not give 100 bonus when a team got 157pts but not all the plies', ()=>{
-        atout = types.clubs;
-        let play = new Play([], atout);
+    it('should not give 100 bonus when a team got 157pts but not all the tricks', ()=>{
+        trump = types.clubs;
+        let play = new Play([], trump);
         let actions = [
             new Action('',getCopyCard(types.spades, 14)),
             new Action('',getCopyCard(types.spades, 12)),
             new Action('',getCopyCard(types.spades, 11)),
             new Action('',getCopyCard(types.spades, 13)),     
         ];
-        let plie = new Plie(1, atout, actions, 0, player1.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        let trick = new Trick(1, trump, actions, 0, player1.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.hearts, 6)),
@@ -220,8 +220,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 14)),
             new Action('',getCopyCard(types.hearts, 10)),     
         ]
-        plie = new Plie(2, atout, actions, 2, player3.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(2, trump, actions, 2, player3.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.hearts, 12)),
@@ -229,8 +229,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 13)),
             new Action('',getCopyCard(types.diamonds, 10)),     
         ]
-        plie = new Plie(3, atout, actions, 2, player1.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(3, trump, actions, 2, player1.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.spades, 6)),
@@ -238,8 +238,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 8)),
             new Action('',getCopyCard(types.spades, 8)),     
         ]
-        plie = new Plie(4, atout, actions, 3, player4.getPlayerId(), player4.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(4, trump, actions, 3, player4.getPlayerId(), player4.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 14)),
@@ -247,8 +247,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.clubs, 13)),
             new Action('',getCopyCard(types.clubs, 11)),     
         ]
-        plie = new Plie(5, atout, actions, 3, player3.getPlayerId(), player3.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(5, trump, actions, 3, player3.getPlayerId(), player3.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 9)),
@@ -256,8 +256,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.spades, 9)),
             new Action('',getCopyCard(types.clubs, 8)),     
         ]
-        plie = new Plie(6, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(6, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.clubs, 10)),
@@ -265,8 +265,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.diamonds, 9)),
             new Action('',getCopyCard(types.clubs, 7)),     
         ]
-        plie = new Plie(7, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(7, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
         
         actions = [
             new Action('',getCopyCard(types.hearts, 11)),
@@ -274,8 +274,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.hearts, 9)),
             new Action('',getCopyCard(types.spades, 10)),     
         ]
-        plie = new Plie(8, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(8, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
 
         actions = [
             new Action('',getCopyCard(types.clubs, 6)),
@@ -283,8 +283,8 @@ describe("play.calculatePointsTeam", ()=>{
             new Action('',getCopyCard(types.diamonds, 8)),
             new Action('',getCopyCard(types.diamonds, 6)),     
         ]
-        plie = new Plie(9, atout, actions, 0, player3.getPlayerId(), player2.getPlayerId());
-        play.addPlie(plie);
+        trick = new Trick(9, trump, actions, 0, player3.getPlayerId(), player2.getPlayerId());
+        play.addTrick(trick);
             
         const resultA = play.calculatePointsTeam(teamA);
         const resultB = play.calculatePointsTeam(teamB);

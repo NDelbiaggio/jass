@@ -1,12 +1,11 @@
 const { Player } = require('../../../models/player');
 const { Play } = require('../../../models/play');
-const { Plie } = require('../../../models/plie');
-const { Action } = require('../../../models/action');
+const { Trick } = require('../../../models/trick');
 
-const { types, getCopyCard } = require('../../../db/lstCards');
-const { getPlayerToChooseAtout } = require('../../../communication/notifiers/notifyToChoseAtout');
+const { types, getCopyCard } = require('../../../db/deck');
+const { getPlayerToChooseTrump } = require('../../../communication/notifiers/notifyToChoseTrump');
 
-describe('getPlayerToChooseAtout', () => {
+describe('getPlayerToChooseTrump', () => {
 
     let player1 = new Player('', '',
         [
@@ -66,23 +65,23 @@ describe('getPlayerToChooseAtout', () => {
     it("Should return the player who has the 7 of diamonds if it is the first play of the gmae", () => {
         let play = new Play();
 
-        const result = getPlayerToChooseAtout(players, play);
+        const result = getPlayerToChooseTrump(players, play);
 
         expect(result).toBe(player2);
     });
 
-    it("Should return the player index 3 if the player index 2 did atout previously", () => {
+    it("Should return the player index 3 if the player index 2 did trump previously", () => {
         let play = new Play('', '', player3._id ,'');
 
-        const result = getPlayerToChooseAtout(players, play);
+        const result = getPlayerToChooseTrump(players, play);
 
         expect(result).toBe(player4);
     });
 
-    it("Should return the player index 0 if the player index 3 did atout previously", () => {
+    it("Should return the player index 0 if the player index 3 did trump previously", () => {
         let play = new Play('', '', player4._id, '');
 
-        const result = getPlayerToChooseAtout(players, play);
+        const result = getPlayerToChooseTrump(players, play);
 
         expect(result).toBe(player1);
     });
