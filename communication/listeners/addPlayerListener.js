@@ -23,8 +23,10 @@ module.exports.addPlayerListener = function(io, socket, game){
                     distributeCards(io, players, ()=>{
                         notifyToChooseTrump(io, game.players, game.play);
                     }); 
-                }                
+                }
+                console.log('Last player has been added: ', name);            
             }
+            console.log('A player joined: ', name);            
         }else{
             socket.emit("game full", {});
             

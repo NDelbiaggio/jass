@@ -25,6 +25,7 @@ function distributeCards(io, players, cb){
  * @param {*} cards of the player
  */
 function sendCards(io, destination, cards){
+    console.log("I send cards");
     io.to(destination).emit(eventName, {cards}); 
 }
 
