@@ -9,7 +9,6 @@ const trumpEvent = 'trump';
 
 module.exports = function (io, socket, players, play) {
     socket.on(trumpEvent, (trump)=>{
-        console.log("Trump is : ",trump)
         if(play.trump){
             return notifyActionNotAllowed(socket, "The play is not finished!");
         }
